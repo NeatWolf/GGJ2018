@@ -17,13 +17,11 @@ public class Waveform : MonoBehaviour {
 		texture.wrapMode = TextureWrapMode.Clamp;
 
 		var size = clip.samples * clip.channels;
-		Debug.Log(size);
 
 		var samples = new float[size];
 		clip.GetData(samples, 0);
 
 		int sampleWidth = size/texture.width;
-		Debug.LogFormat("sampleWidth: {0}", sampleWidth);
 		for (int i=0; i<texture.width; i++) {
 			float maxSample = 0, minSample = 1;
 			
