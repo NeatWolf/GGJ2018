@@ -16,19 +16,47 @@ public class RecordingController : MonoBehaviour {
 
 	private float timer;
 
-	void Awake () {
+	public void Record () {
+
+		clipRecording.RecordClip(recordTime);
+	}
+
+	public void PlayForwards () {
+		clipRecording.PlayClipForwards(audio, timer);
+	}
+
+	public void PlayBackwards () {
+		clipRecording.PlayClipBackwards(audio, timer);
+	}
+
+	public void Restart () {
+		audio.Stop();
+
 		clipRecording = new ClipRecording();
+		
+		waveform.SetClipRecording(clipRecording);
+
+		waveform.ClearWaveform();
+
+		timer = 0;
+
+	}
+
+	void Awake () {
+		audio = GetComponent<AudioSource>();
 	}
 
 	// Use this for initialization
 	void Start () {
-		
+		Restart();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (clipRecording.IsRecording()) {
 			timer += Time.deltaTime;
+
+			waveform.DrawWaveform();
 
 			if (timer >= recordTime)
 				clipRecording.StopRecording();
@@ -49,12 +77,10 @@ public class RecordingController : MonoBehaviour {
 					clipRecording.StopClip(audio);
 				}				
 			}
+
 		}
-
-		
-
+		waveform.SetPlayhead(timer/recordTime);
 
 	}
 
-	
 }

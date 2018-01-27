@@ -4,12 +4,9 @@ using UnityEngine;
 
 public class ClipRecording {
 
-	[SerializeField]
-	private Waveform waveform;
-
 	private AudioClip clip;
 
-	private float recordTime, timer;
+	private float recordTime;
 
 	private bool isPlaying, isRecording;
 
@@ -26,35 +23,34 @@ public class ClipRecording {
 		isRecording = false;
 	}
 
-	public void PlayClipForwards (AudioSource src) {
-		if (isRecording)
+	public void PlayClipForwards (AudioSource src, float time) {
+		if (isRecording || clip == null || time >= recordTime - 0.1f)
 			return;
-
+		
 		src.Stop();
 
-		src.time = 0;
+		src.clip = clip;
+		src.time = time + 0.05f;
 		src.pitch = 1;
 
 		src.Play();
-
-		timer = 0;
 
 		isPlaying = true;
 		playDir = src.pitch;
 	}
 	
-	public void PlayClipBackwards (AudioSource src) {
-		if (isRecording)
+	public void PlayClipBackwards (AudioSource src, float time) {
+		if (isRecording || clip == null || time <= 0.1f)
 			return;
 
 		src.Stop();
 
-		src.time = src.clip.length - (src.clip.length-recordTime) - 0.05f;
+		src.clip = clip;
+		//src.time = clip.length - (clip.length-recordTime) - 0.05f;
+		src.time = time - 0.05f;
 		src.pitch = -1;
 
 		src.Play();
-
-		timer = 1;
 
 		isPlaying = true;
 		playDir = src.pitch;
@@ -63,6 +59,10 @@ public class ClipRecording {
 	public void StopClip (AudioSource src) {
 		src.Stop();
 		playDir = 0;
+	}
+
+	public AudioClip GetAudioClip () {
+		return clip;
 	}
 
 	public bool IsPlaying() {

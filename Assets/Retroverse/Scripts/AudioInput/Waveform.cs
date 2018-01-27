@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class Waveform : MonoBehaviour {
 
-	ClipRecording clipRecording;
+	private ClipRecording clipRecording;
 	
-	Material currentMat;
+	private Material currentMat;
 
-	public void GetWaveform(AudioClip clip){
+	public void DrawWaveform(){
 		Texture2D texture = new Texture2D(128, 1, TextureFormat.RGFloat, false);
+		//ClearWaveform();
+		
+		AudioClip clip = clipRecording.GetAudioClip();
+
 		texture.wrapMode = TextureWrapMode.Clamp;
 
 		var size = clip.samples * clip.channels;
@@ -17,13 +21,6 @@ public class Waveform : MonoBehaviour {
 
 		var samples = new float[size];
 		clip.GetData(samples, 0);
-		// clear the texture
-		Color32 resetColor = new Color32(0, 0, 0, 0);
-		Color32[] resetColorArray = texture.GetPixels32();
-
-		for (int i=0; i<resetColorArray.Length; i++) {
-			resetColorArray[i] = resetColor;
-		}
 
 		int sampleWidth = size/texture.width;
 		Debug.LogFormat("sampleWidth: {0}", sampleWidth);
@@ -48,8 +45,25 @@ public class Waveform : MonoBehaviour {
 		
 	}
 
+	public void ClearWaveform () {
+		Texture2D texture = new Texture2D(128, 1, TextureFormat.RGFloat, false);
+		Color32 resetColor = new Color32(0, 0, 0, 0);
+		Color32[] resetColorArray = texture.GetPixels32();
+
+		for (int i=0; i<resetColorArray.Length; i++) {
+			resetColorArray[i] = resetColor;
+		}
+
+		texture.Apply();
+		currentMat.SetTexture("_MainTex", texture);
+	}
+
 	public void SetPlayhead (float time) {
 		currentMat.SetFloat("_Timer", time);
+	}
+
+	public void SetClipRecording (ClipRecording _clipRecording) {
+		clipRecording = _clipRecording;
 	}
 
 	void Awake () {
