@@ -22,7 +22,7 @@ public class Waveform : MonoBehaviour {
 
 		// draw the waveform
 		for (int i = 0; i < size; i++){
-			texture.SetPixel(texture.width * i / size, 0, new Color(1 / (samples[i]), 0, 0));
+			texture.SetPixel(texture.width * i / size, 0, new Color(1 / samples[i], 0, 0));
 		}
 		// upload to the graphics card
 		texture.Apply();
