@@ -79,7 +79,7 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _Timer: 0.3941731
+    - _Timer: 0
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
