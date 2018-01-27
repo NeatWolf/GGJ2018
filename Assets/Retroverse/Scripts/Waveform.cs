@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Waveform : MonoBehaviour {
 
+	ClipRecording clipRecording;
+	
 	Material currentMat;
 
 	public void GetWaveform(AudioClip clip){

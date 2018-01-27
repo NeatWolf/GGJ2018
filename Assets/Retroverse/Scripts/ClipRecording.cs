@@ -16,9 +16,14 @@ public class ClipRecording {
 	private float playDir;
 
 	public void RecordClip (float _recordTime) {
-		isRecording = true;
 		recordTime = _recordTime;
 		clip = Microphone.Start(Microphone.devices[0], false, Mathf.CeilToInt(recordTime), 44100);
+		isRecording = true;
+	}
+
+	public void StopRecording () {
+		Microphone.End(Microphone.devices[0]);
+		isRecording = false;
 	}
 
 	public void PlayClipForwards (AudioSource src) {
@@ -55,6 +60,11 @@ public class ClipRecording {
 		playDir = src.pitch;
 	}
 
+	public void StopClip (AudioSource src) {
+		src.Stop();
+		playDir = 0;
+	}
+
 	public bool IsPlaying() {
 		return isPlaying;
 	}
@@ -74,27 +84,6 @@ public class ClipRecording {
 	
 	// Update is called once per frame
 	void Update () {
-		if (playDir > 0) {
-			if (timer < recordTime) {
-				timer += Time.deltaTime;
-				waveform.GetWaveform(clip);
-			}
-
-			if (timer >= recordTime && isRecording) {
-				Microphone.End(Microphone.devices[0]);
-				isRecording = false;
-				playDir = 0;
-			}
-		}
-
-		if (playDir < 0) {
-			if (timer > 0)
-				timer -= Time.deltaTime;
-
-			if (timer <= 0)
-				playDir = 0;
-		}
-
-		waveform.SetPlayhead(timer/clip.length);
+		
 	}
 }
