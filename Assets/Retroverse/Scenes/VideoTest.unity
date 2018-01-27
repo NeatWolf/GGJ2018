@@ -247,7 +247,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 124
+  field of view: 103
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -272,7 +272,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 518255861}
   m_LocalRotation: {x: -0.004813902, y: -0, z: -0, w: 0.99998844}
-  m_LocalPosition: {x: 0.2, y: 0.8, z: -1.6}
+  m_LocalPosition: {x: -0.62, y: 0.8, z: -1.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -504,6 +504,26 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: c53911f53b185e14b872909859a65d2d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0493ec1c662297b4487a041e56fff87d, type: 2}
+    - target: {fileID: 2300002, guid: c53911f53b185e14b872909859a65d2d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 97539974fd07d0e48bc65cd4cfde4474, type: 2}
+    - target: {fileID: 2300006, guid: c53911f53b185e14b872909859a65d2d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5c1cc8e91be8de84ba64651fdb875582, type: 2}
+    - target: {fileID: 2300004, guid: c53911f53b185e14b872909859a65d2d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5c1cc8e91be8de84ba64651fdb875582, type: 2}
+    - target: {fileID: 2300008, guid: c53911f53b185e14b872909859a65d2d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8bbd2840b61b2cd4ebb91a3bf579222c, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c53911f53b185e14b872909859a65d2d, type: 3}
   m_IsPrefabParent: 0
@@ -518,7 +538,7 @@ VideoPlayer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2135473490}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 02e3e95bbf38744dd9b641f6fcf2011d, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: e61afd4cfa07c44bf860f970fdf2a568, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
