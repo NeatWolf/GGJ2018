@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: cb5efda716ed7a04dac83854fa415133
-timeCreated: 1517079331
-licenseType: Pro
+timeCreated: 1517080044
+licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: Button_0
@@ -38,7 +38,7 @@ TextureImporter:
     mipBias: -1
     wrapU: 1
     wrapV: 1
-    wrapW: -1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -48,7 +48,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 20
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -98,6 +98,16 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -107,11 +117,11 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 6
-        height: 6
+        width: 12
+        height: 18
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 2, y: 3, z: 2, w: 3}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -119,13 +129,13 @@ TextureImporter:
       name: Button_1
       rect:
         serializedVersion: 2
-        x: 6
+        x: 12
         y: 0
-        width: 6
-        height: 6
+        width: 12
+        height: 18
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 2, y: 3, z: 2, w: 3}
       outline: []
       physicsShape: []
       tessellationDetail: 0
