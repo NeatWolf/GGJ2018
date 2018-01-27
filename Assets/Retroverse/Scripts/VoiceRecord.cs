@@ -11,6 +11,9 @@ public class VoiceRecord : MonoBehaviour {
 	[SerializeField]
 	private Dropdown micDrop;
 
+	[SerializeField]
+	private Waveform waveform;
+
 	private float timer;
 	bool reversePlaying = false;
 
@@ -18,6 +21,8 @@ public class VoiceRecord : MonoBehaviour {
 
 	private AudioSource audio;
 	private AudioClip recording;
+
+	
 
 	void Awake () {
 		audio = GetComponent<AudioSource>();
@@ -72,5 +77,7 @@ public class VoiceRecord : MonoBehaviour {
 		Debug.Log(audio.clip.length);
 
 		audio.Play();
+
+		waveform.GetWaveform(audio.clip);
 	}
 }
