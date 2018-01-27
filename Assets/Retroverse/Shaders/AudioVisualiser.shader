@@ -67,13 +67,13 @@
 				float y = (i.uv.y * 2)-1;
 
 				if (y < col.x && y > col.y) {
-					col = _BarCol + fixed4(1, 1, 1, 1) * abs(y)*1.1;
+					col = _BarCol - fixed4(1, 1, 1, 1) * abs(y)*0.5;
 				} else {
 					col = _BackCol;	
 				};
 
 				if (i.uv.x > _Timer - _PlayWidth && i.uv.x < _Timer + _PlayWidth) {
-					col = _PlayCol + fixed4(1, 1, 1, 1) * abs(y)*1.1;
+					col = _PlayCol - fixed4(1, 1, 1, 1) * abs(y)*0.5;
 				};
 				return col;
 			}
