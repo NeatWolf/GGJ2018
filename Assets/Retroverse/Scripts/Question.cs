@@ -1,13 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Video;
 
 [CreateAssetMenu(menuName = "Questions/Question")]
 public class Question : ScriptableObject
 {
-    public string videoClipForward;
-    public string videoClipReverse;
+    public VideoClip videoClipForward;
+    public VideoClip videoClipReverse;
     public string answer;
     public int difficulty;
-
+    
 }

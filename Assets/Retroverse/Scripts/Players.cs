@@ -6,7 +6,7 @@ using UnityEngine;
 public class Players : ScriptableObject
 {
     List<Player> players;
-
+    int playerIndex = 0;
     public void Setup(int numPlayers) {
         players = new List<Player>(numPlayers);
         for (int i = 0; i < players.Count; i++) {
@@ -18,6 +18,25 @@ public class Players : ScriptableObject
         
     }
 
+    public Player CurrentPlayer(){
+        return players[playerIndex];
+    }
 
+
+    public void FirstPlayer(){
+        playerIndex = 0;
+
+    }
+    public bool NextPlayer(){
+        playerIndex++;
+        bool isComplete = false;
+        if( playerIndex >= players.Count ){
+            isComplete = true;
+            playerIndex = 0;
+        }
+
+        return isComplete;
+
+    }
 
 }
