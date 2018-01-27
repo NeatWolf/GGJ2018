@@ -2,8 +2,9 @@
 {
 	Properties
 	{
-		_BarCol ("Bar Colour", 2D) = "white" {}
-		_BackCol ("Background Colour", 2D) = "black" {}
+		_MainTex ("Texture", 2D) = "white" {}
+		_BarCol ("Bar Colour", Color) = (1, 1, 1, 1)
+		_BackCol ("Background Colour", Color) = (0, 0, 0, 1)
 	}
 	SubShader
 	{
@@ -33,6 +34,9 @@
 				float4 vertex : SV_POSITION;
 			};
 
+			sampler2D _MainTex;
+			fixed4 _MainTex_ST;
+
 			sampler2D _BarCol;
 			fixed4 _BarCol_ST;
 
@@ -42,7 +46,7 @@
 			{
 				v2f o;
 				o.vertex = UnityObjectToClipPos(v.vertex);
-				o.uv = TRANSFORM_TEX(v.uv, _BarCol);
+				o.uv = TRANSFORM_TEX(v.uv, _MainTex);
 				UNITY_TRANSFER_FOG(o,o.vertex);
 				return o;
 			}
@@ -50,7 +54,7 @@
 			fixed4 frag (v2f i) : SV_Target
 			{
 				// sample the texture
-				fixed4 col = tex2D(_BarCol, i.uv);
+				fixed4 col = tex2D(_MainTex, i.uv);
 
 				return col;
 			}
