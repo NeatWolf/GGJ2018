@@ -7,9 +7,12 @@ public class Waveform : MonoBehaviour {
 	Material currentMat;
 
 	public void GetWaveform(AudioClip clip){
-		Texture2D texture = new Texture2D(256, 1, TextureFormat.RGFloat, false);
+		Texture2D texture = new Texture2D(128, 1, TextureFormat.RGFloat, false);
+		texture.wrapMode = TextureWrapMode.Clamp;
 
 		var size = clip.samples * clip.channels;
+		Debug.Log(size);
+
 		var samples = new float[size];
 		clip.GetData(samples, 0);
 		// clear the texture
@@ -21,8 +24,25 @@ public class Waveform : MonoBehaviour {
 		}
 
 		// draw the waveform
-		for (int i = 0; i < size; i++){
-			texture.SetPixel(texture.width * i / size, 0, new Color(1 / samples[i], 0, 0));
+		// for (int i = 0; i < size; i++){
+		// 	texture.SetPixel(texture.width * i / size, 0, new Color(1 / samples[i], 0, 0));
+		// }
+
+		int sampleWidth = size/texture.width;
+		Debug.LogFormat("sampleWidth: {0}", sampleWidth);
+		for (int i=0; i<texture.width; i++) {
+			float maxSample = 0, minSample = 1;
+			
+			for (var j=0; j<sampleWidth; j++) {
+				int index = j+i*sampleWidth;
+
+				if (samples[index] > maxSample)
+					maxSample = samples[index];
+
+				if (samples[index] < minSample)
+					minSample = samples[index];
+			}
+			texture.SetPixel(i, 0, new Color(maxSample, minSample, 0));
 		}
 		// upload to the graphics card
 		texture.Apply();
@@ -31,7 +51,7 @@ public class Waveform : MonoBehaviour {
 	}
 
 	void Awake () {
-		currentMat = GetComponent<MeshRenderer>().material;
+		currentMat = GetComponent<MeshRenderer>().sharedMaterial;
 	}
 
 	// Use this for initialization
