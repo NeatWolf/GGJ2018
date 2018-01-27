@@ -7,14 +7,16 @@ namespace GGJ2018 {
 		[SerializeField]
 		Dialog[]  dialogs;
 
+		[SerializeField]
+		DialogTransistion transition;
+		
 		// Use this for initialization
 		void Awake () {
 			foreach(var dialog in dialogs){
 				dialog.Init();
 				dialog.gameObject.SetActive(false);
 			}
-			dialogs[0].gameObject.SetActive(true);
-			
+			transition.Show( dialogs[0] );
 		}
 		
 		// Update is called once per frame
