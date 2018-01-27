@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Players/PlayerCollection")]
-public class Player : ScriptableObject
+public class Player 
 {
-
-
+    public string name;
+    public long score;
 }
