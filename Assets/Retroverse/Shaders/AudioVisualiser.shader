@@ -6,6 +6,10 @@
 		_MainTex ("Texture", 2D) = "white" {}
 		_BarCol ("Bar Colour", Color) = (1, 1, 1, 1)
 		_BackCol ("Background Colour", Color) = (0, 0, 0, 1)
+
+		_Timer ("Timer", Float) = 0
+		_PlayWidth ("Playhead Width", float) = 0
+		_PlayCol ("Playhead Color", Color) = (0.5, 0.5, 0.5, 1)
 	}
 	SubShader
 	{
@@ -40,8 +44,11 @@
 
 			half4 _BarCol;
 			half4 _BackCol;
+			half4 _PlayCol;
 			
 			float _Multi;
+			float _Timer;
+			float _PlayWidth;
 
 			v2f vert (appdata v)
 			{
@@ -58,11 +65,15 @@
 				i.uv.y = saturate(i.uv.y);
 				fixed4 col = tex2D(_MainTex, i.uv) * _Multi;
 				float y = (i.uv.y * 2)-1;
-				
+
 				if (y < col.x && y > col.y) {
-					col = _BarCol;
+					col = _BarCol + fixed4(1, 1, 1, 1) * abs(y)*1.1;
 				} else {
 					col = _BackCol;	
+				};
+
+				if (i.uv.x > _Timer - _PlayWidth && i.uv.x < _Timer + _PlayWidth) {
+					col = _PlayCol + fixed4(1, 1, 1, 1) * abs(y)*1.1;
 				};
 				return col;
 			}

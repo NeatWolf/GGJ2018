@@ -75,13 +75,17 @@ Material:
     - _Multi: 1
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _PlayWidth: 0.005
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
+    - _Timer: 5.8427043
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _BackCol: {r: 0, g: 0, b: 0, a: 1}
-    - _BarCol: {r: 0, g: 0.04827571, b: 1, a: 1}
+    - _BackCol: {r: 1, g: 1, b: 1, a: 1}
+    - _BarCol: {r: 1, g: 0, b: 0, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _PlayCol: {r: 0.6544118, g: 0, b: 0, a: 1}
+    - _PlayColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}

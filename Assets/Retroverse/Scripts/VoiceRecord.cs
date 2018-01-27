@@ -22,7 +22,15 @@ public class VoiceRecord : MonoBehaviour {
 	private AudioSource audio;
 	private AudioClip recording;
 
-	
+	public void RestartVoice () {
+		audio.Stop();
+		timer = 0;
+		reversePlaying = false;
+
+		UpdateMicList();
+		SetMic();
+		PlayAudioRealtime();
+	}	
 
 	void Awake () {
 		audio = GetComponent<AudioSource>();
@@ -30,15 +38,14 @@ public class VoiceRecord : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		UpdateMicList();
-		SetMic();
-		PlayAudioRealtime();
+		RestartVoice();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		timer += Time.deltaTime;
 		waveform.GetWaveform(audio.clip);
+		waveform.SetPlayhead(timer/recordTime);
 		if (timer >= recordTime && !reversePlaying) {
 			PlayAudioBackwards();
 			reversePlaying = true;

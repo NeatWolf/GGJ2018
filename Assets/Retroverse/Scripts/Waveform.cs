@@ -23,11 +23,6 @@ public class Waveform : MonoBehaviour {
 			resetColorArray[i] = resetColor;
 		}
 
-		// draw the waveform
-		// for (int i = 0; i < size; i++){
-		// 	texture.SetPixel(texture.width * i / size, 0, new Color(1 / samples[i], 0, 0));
-		// }
-
 		int sampleWidth = size/texture.width;
 		Debug.LogFormat("sampleWidth: {0}", sampleWidth);
 		for (int i=0; i<texture.width; i++) {
@@ -48,6 +43,11 @@ public class Waveform : MonoBehaviour {
 		texture.Apply();
 
 		currentMat.SetTexture("_MainTex", texture);
+		
+	}
+
+	public void SetPlayhead (float time) {
+		currentMat.SetFloat("_Timer", time);
 	}
 
 	void Awake () {

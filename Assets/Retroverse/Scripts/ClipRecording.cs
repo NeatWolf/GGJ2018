@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class ClipRecording {
 
+	[SerializeField]
+	private Waveform waveform;
+
 	private AudioClip clip;
 
 	private float recordTime, timer;
 
-	private bool isRecording;
+	private bool isPlaying, isRecording;
+
+	private float playDir;
 
 	public void RecordClip (float _recordTime) {
 		isRecording = true;
@@ -26,6 +31,11 @@ public class ClipRecording {
 		src.pitch = 1;
 
 		src.Play();
+
+		timer = 0;
+
+		isPlaying = true;
+		playDir = src.pitch;
 	}
 	
 	public void PlayClipBackwards (AudioSource src) {
@@ -38,6 +48,19 @@ public class ClipRecording {
 		src.pitch = -1;
 
 		src.Play();
+
+		timer = 1;
+
+		isPlaying = true;
+		playDir = src.pitch;
+	}
+
+	public bool IsPlaying() {
+		return isPlaying;
+	}
+
+	public float GetPlayDir () {
+		return playDir;
 	}
 
 	public bool IsRecording() {
@@ -51,13 +74,27 @@ public class ClipRecording {
 	
 	// Update is called once per frame
 	void Update () {
-		if (timer < recordTime)
-			timer += Time.deltaTime;
+		if (playDir > 0) {
+			if (timer < recordTime) {
+				timer += Time.deltaTime;
+				waveform.GetWaveform(clip);
+			}
 
-		if (timer >= recordTime && isRecording) {
-			Microphone.End(Microphone.devices[0]);
-			isRecording = false;
+			if (timer >= recordTime && isRecording) {
+				Microphone.End(Microphone.devices[0]);
+				isRecording = false;
+				playDir = 0;
+			}
 		}
 
+		if (playDir < 0) {
+			if (timer > 0)
+				timer -= Time.deltaTime;
+
+			if (timer <= 0)
+				playDir = 0;
+		}
+
+		waveform.SetPlayhead(timer/clip.length);
 	}
 }
