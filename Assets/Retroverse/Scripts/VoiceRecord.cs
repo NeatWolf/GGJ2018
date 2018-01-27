@@ -17,6 +17,7 @@ public class VoiceRecord : MonoBehaviour {
 	private string micName;
 
 	private AudioSource audio;
+	private AudioClip recording;
 
 	void Awake () {
 		audio = GetComponent<AudioSource>();
