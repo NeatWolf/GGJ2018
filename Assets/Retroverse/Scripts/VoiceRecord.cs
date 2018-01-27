@@ -38,6 +38,7 @@ public class VoiceRecord : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		timer += Time.deltaTime;
+		waveform.GetWaveform(audio.clip);
 		if (timer >= recordTime && !reversePlaying) {
 			PlayAudioBackwards();
 			reversePlaying = true;
@@ -78,6 +79,6 @@ public class VoiceRecord : MonoBehaviour {
 
 		audio.Play();
 
-		waveform.GetWaveform(audio.clip);
+		// waveform.GetWaveform(audio.clip);
 	}
 }

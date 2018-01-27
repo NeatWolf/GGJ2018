@@ -2,6 +2,7 @@
 {
 	Properties
 	{
+		_Multi ("Multiplier", Float) = 1
 		_MainTex ("Texture", 2D) = "white" {}
 		_BarCol ("Bar Colour", Color) = (1, 1, 1, 1)
 		_BackCol ("Background Colour", Color) = (0, 0, 0, 1)
@@ -37,11 +38,11 @@
 			sampler2D _MainTex;
 			fixed4 _MainTex_ST;
 
-			sampler2D _BarCol;
-			fixed4 _BarCol_ST;
-
-			sampler2D _BackCol;
+			half4 _BarCol;
+			half4 _BackCol;
 			
+			float _Multi;
+
 			v2f vert (appdata v)
 			{
 				v2f o;
@@ -54,8 +55,15 @@
 			fixed4 frag (v2f i) : SV_Target
 			{
 				// sample the texture
-				fixed4 col = tex2D(_MainTex, i.uv);
-
+				i.uv.y = saturate(i.uv.y);
+				fixed4 col = tex2D(_MainTex, i.uv) * _Multi;
+				float y = (i.uv.y * 2)-1;
+				
+				if (y < col.x && y > col.y) {
+					col = _BarCol;
+				} else {
+					col = _BackCol;	
+				};
 				return col;
 			}
 			ENDCG
