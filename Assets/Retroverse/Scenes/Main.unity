@@ -774,7 +774,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 324604561}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1533776634}
+        m_MethodName: NextChar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &324604561
@@ -2664,7 +2675,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 882682669}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1533776634}
+        m_MethodName: PrevChar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &882682669
@@ -3703,7 +3725,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1357295449}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -98529514, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -3714,13 +3736,14 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Texture: {fileID: 2800000, guid: d8a797fb183978c4a9c8d0a2a7398b32, type: 3}
-  m_UVRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
+  m_Sprite: {fileID: 21300000, guid: d8a797fb183978c4a9c8d0a2a7398b32, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
 --- !u!222 &1357295452
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4486,6 +4509,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c5e56ba63a64d445ba342e86906ae85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characters:
+  - {fileID: 11400000, guid: cccccbc751a24f346a120ad4616c8207, type: 2}
+  - {fileID: 11400000, guid: 06393f7fdc4b5b6439f6fc77571355e5, type: 2}
+  - {fileID: 11400000, guid: 894f04d6efb31714c9ff5d2834458f0b, type: 2}
+  - {fileID: 11400000, guid: 04222ea6f582a2c45bfb5b2881539e5c, type: 2}
+  - {fileID: 11400000, guid: d1e686704e4f59b4cb27a5e75aea8056, type: 2}
+  charImg: {fileID: 1357295451}
+  charName: {fileID: 1076628919}
 --- !u!1001 &1540289092
 Prefab:
   m_ObjectHideFlags: 0
