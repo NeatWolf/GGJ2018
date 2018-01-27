@@ -4,25 +4,30 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.Timeline;
-public class Interstitial : MonoBehaviour {
 
+namespace GGJ2018 {
+	public class Interstitial : MonoBehaviour {
 
+		[SerializeField]
+		float delay;
 
-	[SerializeField]
-	DialogTransistion dialog;
+		[SerializeField]
+		DialogTransistion transition;
 
-	[SerializeField]
-	TimelineAsset assetToPlay;
+		public void Awake()
+		{
+			transition.ShowBeginEvent += OnShowBegin; 	
+		}
 
-	PlayableDirector playableDirector;
+		private void OnShowBegin(Dialog dialog)
+		{
+			Debug.Log("Meep!");
+			StartCoroutine( ShowDialog(dialog) );
+		}
 
-	public void Awake()
-	{
-		dialog.ShowBeginEvent += OnShowBegin; 	
+		IEnumerator ShowDialog(Dialog dialog){
+			yield return new WaitForSeconds(delay);
+			dialog.Show();
+		}
 	}
-
-    private void OnShowBegin()
-    {
-		playableDirector.Play();
-    }
 }

@@ -2,19 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu]
-public class DialogTransistion : ScriptableObject 
-{
-	public event System.Action ShowBeginEvent;
-	public event System.Action ShowCompleteEvent;
-	public event System.Action HideBeginEvent;
-	public event System.Action HideCompleteEvent;
+namespace GGJ2018 {
 
-	public void Show()
+	[CreateAssetMenu]
+	public class DialogTransistion : ScriptableObject 
 	{
-		ShowBeginEvent.Invoke();
-	}
+		public event System.Action<Dialog> ShowBeginEvent;
 
-	
+		public void Show(Dialog dialog)
+		{
+			
+			ShowBeginEvent.Invoke(dialog);
+		}
+
+		
+
+	}
 
 }

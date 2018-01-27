@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour {
+namespace GGJ2018 {
+	public class GameOverDialog : Dialog {
 
 	// Use this for initialization
 	void Start () {
@@ -13,4 +14,6 @@ public class NewBehaviourScript : MonoBehaviour {
 	void Update () {
 		
 	}
+}
+
 }
