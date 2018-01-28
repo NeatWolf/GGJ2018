@@ -40,12 +40,6 @@ public class VideoPlaybackDialog : Dialog {
 
 	int triesRemaining;
 
-	void Init () 
-	{
-
-		
-	}
-
 	void Awake()
 	{
 		continueButton.onClick.RemoveAllListeners();

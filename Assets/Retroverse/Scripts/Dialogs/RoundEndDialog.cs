@@ -6,7 +6,7 @@ namespace GGJ2018 {
 	public class RoundEndDialog : Dialog {
 
 		[SerializeField]
-		private GameObject scorePanel;
+		private ScorePanel scorePanel;
 
 		[SerializeField]
 		private Questions questions;
@@ -24,7 +24,8 @@ namespace GGJ2018 {
 		[SerializeField]
 		private DialogTransistion transition;
 
-		private List<int> scoresThisRound = new List<int>();
+		[SerializeField]
+		private Transform scoreBoardContainer;
 
 		public override void Show() {
 			base.Show();
@@ -37,28 +38,34 @@ namespace GGJ2018 {
 			
 
 			players.FirstPlayer();
-			int i = 0;
 
-			bool lastPlayer = false;
-			
-			while(!lastPlayer) {
-				int playerDistance = Levenshtein.Distance(round.guesses[i], answer);
-				float percent = Mathf.Clamp01((1f - (playerDistance/maxDistance)));
-				int score = Mathf.RoundToInt(percent  * 100);
-
-				scoresThisRound.Add(score);
+			int numPlayers = players.NumPlayers();
+			int j=0;
+			Player speakingPlayer = players.CurrentPlayer();
+			for(int i=0;i<numPlayers;i++) {
+				Player player = players.GetPlayerAt(i);
+				int score = 0;
+				if( player == speakingPlayer && numPlayers > 1 ){
+					
+				}
+				else {
+					int playerDistance = Levenshtein.Distance(round.guesses[j], answer);
+					float percent = Mathf.Clamp01((1f - (playerDistance/maxDistance)));
+					score = Mathf.RoundToInt(percent  * 100);
+					player.score += score;
+					j+=1;
+				}
 				
-				players.CurrentPlayer().score += score;
+				
+				
+				ScorePanel newPanel = Instantiate<ScorePanel>(scorePanel, scoreBoardContainer);
 
-				ScorePanel newPanel = Instantiate(scorePanel, scorePanel.transform.position, Quaternion.identity).GetComponent<ScorePanel>();
-
-				newPanel.charImg.sprite = players.CurrentPlayer().character.charSprite;
-				newPanel.playerName.text = players.CurrentPlayer().name;
+				newPanel.charImg.sprite = player.character.charSprite;
+				newPanel.playerName.text = player.name;
 				newPanel.scoreThisRound.text = score.ToString();
-				newPanel.totalScore.text = players.CurrentPlayer().score.ToString();
+				newPanel.totalScore.text = player.score.ToString();
 
-				lastPlayer = players.NextPlayer();
-				i+=1;
+				
 			}
 		}
 
