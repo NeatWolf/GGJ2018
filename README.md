@@ -6,11 +6,11 @@ Entry for the Global Game Jam 2018
 Thank you for choosing the Tele_Verse Education System! Simply listen to the video clips and repeat what you hear. With Tele_Verse learning can be fun! !nuf eb ginnrael sereV_eleT htiW .raeh uoy tahw taeper dna spilc oediv eht ot netlis ylpmiS !metsyS noitacudE esreV_eleT eht gnisoohc rof uoy knahT
 
 ## Team
-- Maf'j Alvarez - Concept, UX, Game Design
-- Amy Godliman - Art Direction, Writing, Acting 
-- Evan Griffiths - Programming, Acting
-- Denis Gruba - Video Production, 3D Modelling, Acting
-- Paul Hayes - Programming, Acting
+- Maf'j Alvarez - Concept, UX, Game Design: [@limbicfish](https://twitter.com/limbicfish)
+- Amy Godliman - Art Direction, Writing, Acting: [@acgodliman](https://twitter.com/acgodliman)
+- Evan Griffiths - Programming, Acting: [@BlookerG](https://twitter.com/BlookerG)
+- Denis Gruba - Video Production, 3D Modelling, Acting: [@d_gruba](https://twitter.com/d_gruba)
+- Paul Hayes - Programming, Acting: [@paul_hayes](https://twitter.com/paul_hayes)
 
 ### Additional Actors
 - Sarah Cole
