@@ -13,7 +13,10 @@ namespace GGJ2018 {
 		private Waveform waveform;
 
 		[SerializeField]
-		private Text countdownText, repeatPhraseText;
+		private Text countdownText;
+		
+		[SerializeField]
+		Text repeatPhraseText;
 
 		[SerializeField]
 		private Text nameField;

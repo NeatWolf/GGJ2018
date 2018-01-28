@@ -65,20 +65,27 @@ public class VideoPlaybackDialog : Dialog {
 			triesRemaining = settings.numberOfTries;
 		}
 		base.Show();
-		Play();
+		StartCoroutine( Play() );
 	}
 
-	void Play(){
+	IEnumerator Play(){
+		repeatButton.gameObject.SetActive(false);
+		continueButton.gameObject.SetActive(false);
 		videoPlayer.loopPointReached -= OnComplete;
 		videoPlayer.clip = playQuestionForwards ?  questions.CurrentQuestion().videoClipForward : questions.CurrentQuestion().videoClipReverse;
 		videoPlayer.loopPointReached += OnComplete;
-
-		videoPlayer.SetTargetAudioSource( 0, videoPlayer.gameObject.GetComponent<AudioSource>() );
+		//Debug.Log("prepared!");
+		//videoPlayer.audioOutputMode = VideoAudioOutputMode.AudioSource;
+		//videoPlayer.EnableAudioTrack(0, true);		
+		videoPlayer.SetTargetAudioSource( 0, videoPlayer.gameObject.GetComponent<AudioSource>() );		
+		videoPlayer.Prepare();
+		yield return new WaitUntil( ()=>videoPlayer.isPrepared );
+		
 		videoPlayer.Play();
-//		videoPlayer.
-		repeatButton.gameObject.SetActive(false);
-		continueButton.gameObject.SetActive(false);
+
+
 		UpdateText();
+		yield break;
 	}
 	
     private void OnComplete(VideoPlayer source)
@@ -98,7 +105,7 @@ public class VideoPlaybackDialog : Dialog {
 		triesRemaining--;
 		UpdateText();
 		Debug.Log("RepeatVideo");
-		Play();
+		StartCoroutine( Play() );
 	}
 
 	void NextDialog()
