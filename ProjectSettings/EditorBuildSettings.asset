@@ -5,13 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Retroverse/Scenes/Main.unity
     guid: 6d5571e115b8771468de1e689459976c
   - enabled: 0
     path: Assets/Retroverse/Scenes/VideoTest.unity
     guid: 9b597167f655e4db0ab5b10f2e040d11
-  - enabled: 0
+  - enabled: 1
     path: Assets/Retroverse/Scenes/VoiceRecordTest.unity
     guid: 98f9e8dd8d5db9c48afef980e018199c
   - enabled: 0
