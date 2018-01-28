@@ -4,12 +4,16 @@ using UnityEngine;
 namespace GGJ2018 {
 	public class PlayerGuessDialog : Dialog {
 
-		// Use this for initialization
+		[SerializeField]
+		Dialog nextDialog;
+
+		[SerializeField]
+		DialogTransistion transistion;
+
 		void Start () {
 			
 		}
 		
-		// Update is called once per frame
 		void Update () {
 			
 		}
