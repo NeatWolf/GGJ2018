@@ -28,5 +28,6 @@ MonoBehaviour:
     rgba: 4278255615
   - serializedVersion: 2
     rgba: 4294967295
+  numberOfRounds: 5
   numberOfTries: 2
   triesRemainingText: REPLAYS:{0}

@@ -9,15 +9,14 @@ public class LevensteinTest {
     [Test]
     public void TestDiffStrings () {
         string a = "   kitten   ", b = "  sitting     ";
-
-        Assert.AreEqual(3, Levenshtein.Distance(a, b));
+        Assert.AreEqual(3, a.LevenshteinDistance(b));
     }
 
     [Test]
     public void TestSameString () {
         string a = "kitten";
 
-        Assert.AreEqual(0, Levenshtein.Distance(a, a));
+        Assert.AreEqual(0, a.LevenshteinDistance(a));
     }
 
     [Test]

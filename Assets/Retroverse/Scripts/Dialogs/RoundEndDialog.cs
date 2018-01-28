@@ -6,7 +6,7 @@ namespace GGJ2018 {
 	public class RoundEndDialog : Dialog {
 
 		[SerializeField]
-		private GameObject scorePanel;
+		private ScorePanel scorePanel;
 
 		[SerializeField]
 		private Questions questions;
@@ -17,14 +17,18 @@ namespace GGJ2018 {
 		[SerializeField]
 		private Round round;
 
+		[SerializeField]
+		private Settings settings;
+
 
 		[SerializeField]
-		private Dialog nextDialog;
+		private Dialog roundBeginDialog, gameOverDialog;
 
 		[SerializeField]
 		private DialogTransistion transition;
 
-		private List<int> scoresThisRound = new List<int>();
+		[SerializeField]
+		private Transform scoreBoardContainer;
 
 		public override void Show() {
 			base.Show();
@@ -37,33 +41,55 @@ namespace GGJ2018 {
 			
 
 			players.FirstPlayer();
-			int i = 0;
 
-			bool lastPlayer = false;
-			
-			while(!lastPlayer) {
-				int playerDistance = Levenshtein.Distance(round.guesses[i], answer);
-				float percent = Mathf.Clamp01((1f - (playerDistance/maxDistance)));
-				int score = Mathf.RoundToInt(percent  * 100);
+			int numPlayers = players.NumPlayers();
 
-				scoresThisRound.Add(score);
+			Debug.Log(numPlayers);
+			int j=0;
+			Player speakingPlayer = players.CurrentPlayer();
+			for(int i=0;i<numPlayers;i++) {
+				Player player = players.GetPlayerAt(i);
+				Debug.Log("<b>" + player.name + "</b>");
+				int score = 0;
+				if( player == speakingPlayer && numPlayers > 1 ){
+					
+				}
+				else {
+					int playerDistance = round.guesses[j].LevenshteinDistance(answer);
+					Debug.LogFormat("Distance: {0}", playerDistance.ToString());
+
+					float percent = Mathf.Clamp01((1f - (1f*playerDistance/maxDistance)));
+					Debug.LogFormat("Percent: {0}", percent.ToString());
+					
+					score = Mathf.RoundToInt(percent  * 100);
+					player.score += score;
+					j+=1;
+				}
 				
-				players.CurrentPlayer().score += score;
+				Debug.LogFormat("Round score: {0}, Total score: {1}", score, player.score);
+				
+				ScorePanel newPanel = Instantiate<ScorePanel>(scorePanel, scoreBoardContainer);
 
-				ScorePanel newPanel = Instantiate(scorePanel, scorePanel.transform.position, Quaternion.identity).GetComponent<ScorePanel>();
-
-				newPanel.charImg.sprite = players.CurrentPlayer().character.charSprite;
-				newPanel.playerName.text = players.CurrentPlayer().name;
+				newPanel.charImg.sprite = player.character.charSprite;
+				newPanel.playerName.text = player.name;
 				newPanel.scoreThisRound.text = score.ToString();
-				newPanel.totalScore.text = players.CurrentPlayer().score.ToString();
+				newPanel.totalScore.text = player.score.ToString();
 
-				lastPlayer = players.NextPlayer();
-				i+=1;
+				
 			}
 		}
 
 		public void NextDialog () {
 			Hide();
+
+			Dialog nextDialog;
+
+			if (round.roundNum >= settings.numberOfRounds) {
+				nextDialog = gameOverDialog;
+			} else {
+				round.roundNum += 1;
+				nextDialog = roundBeginDialog;
+			}
 			transition.Show(nextDialog);
 		}
 

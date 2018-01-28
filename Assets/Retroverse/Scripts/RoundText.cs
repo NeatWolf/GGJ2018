@@ -9,6 +9,9 @@ public class RoundText : MonoBehaviour {
 	Text roundText;
 
 	[SerializeField]
+	Round round;
+
+	[SerializeField]
 	Questions questions;
 
 	[SerializeField]
@@ -31,7 +34,7 @@ public class RoundText : MonoBehaviour {
 		if( players.CurrentPlayer() == null ){
 			return;
 		}
-		roundText.text = string.Format( formatStr, questions.currentRound );
+		roundText.text = string.Format( formatStr, round.roundNum );
 		characterImage.sprite = players.CurrentPlayer().character.charSprite;
 		playerNameField.text = players.CurrentPlayer().name;
 	}

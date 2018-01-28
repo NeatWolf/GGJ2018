@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Players/PlayerCollection")]
-public class Players : ScriptableObject
+public class Players : ScriptableObject, ISerializationCallbackReceiver
 {
     List<Player> players;
     int playerIndex = 0;
@@ -48,4 +48,13 @@ public class Players : ScriptableObject
 
     }
 
+    public void OnBeforeSerialize()
+    {
+        
+    }
+
+    public void OnAfterDeserialize()
+    {
+        playerIndex = 0;
+    }
 }
