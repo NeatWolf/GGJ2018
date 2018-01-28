@@ -6,6 +6,9 @@ namespace GGJ2018 {
 	public class RoundEndDialog : Dialog {
 
 		[SerializeField]
+		private GameObject scorePanel;
+
+		[SerializeField]
 		private Questions questions;
 
 		[SerializeField]
@@ -15,6 +18,11 @@ namespace GGJ2018 {
 		private Round round;
 
 		private List<int> scoresThisRound = new List<int>();
+
+		public override void Show() {
+			base.Show();
+			CalculateScores();
+		}
 
 		public void CalculateScores () {
 			string answer = questions.CurrentQuestion().answer;
@@ -32,6 +40,15 @@ namespace GGJ2018 {
 				int score = Mathf.RoundToInt(percent  * 100);
 
 				scoresThisRound.Add(score);
+				
+				players.CurrentPlayer().score += score;
+
+				ScorePanel newPanel = Instantiate(scorePanel, scorePanel.transform.position, Quaternion.identity).GetComponent<ScorePanel>();
+
+				newPanel.charImg.sprite = players.CurrentPlayer().character.charSprite;
+				newPanel.playerName.text = players.CurrentPlayer().name;
+				newPanel.scoreThisRound.text = score.ToString();
+				newPanel.totalScore.text = players.CurrentPlayer().score.ToString();
 
 				lastPlayer = players.NextPlayer();
 				i+=1;
