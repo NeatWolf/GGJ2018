@@ -77,6 +77,10 @@ namespace GGJ2018 {
 
 				
 			}
+
+			for (var i=0; i<numPlayers; i++) {
+				
+			}
 		}
 
 		public void NextDialog () {
