@@ -2232,7 +2232,7 @@ GameObject:
   - component: {fileID: 326519282}
   - component: {fileID: 326519281}
   m_Layer: 5
-  m_Name: Name
+  m_Name: NameText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4150,7 +4150,7 @@ GameObject:
   - component: {fileID: 614506182}
   - component: {fileID: 614506181}
   m_Layer: 5
-  m_Name: Text
+  m_Name: WinnerIsText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9609,11 +9609,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb9f9fee6317086408dd11da5867c591, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  winnerNameText: {fileID: 0}
-  winnerCharImg: {fileID: 0}
+  winnerNameText: {fileID: 326519281}
+  winnerCharImg: {fileID: 1906460199}
   replayButton: {fileID: 657710511}
   quitButton: {fileID: 1022456350}
-  players: {fileID: 0}
+  players: {fileID: 11400000, guid: 3e4a9326e5cad5742ac57ce0eceebbc8, type: 2}
 --- !u!114 &1220875074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14116,7 +14116,7 @@ GameObject:
   - component: {fileID: 1906460200}
   - component: {fileID: 1906460199}
   m_Layer: 5
-  m_Name: Character
+  m_Name: CharacterImg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14679,6 +14679,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roundText: {fileID: 751909423}
+  round: {fileID: 11400000, guid: 92d00f12a3110e34fb56908eb4eccff6, type: 2}
   questions: {fileID: 11400000, guid: 3db0795e67af4944584d99c58b8286e2, type: 2}
   players: {fileID: 11400000, guid: 3e4a9326e5cad5742ac57ce0eceebbc8, type: 2}
   playerNameField: {fileID: 1946138043}
