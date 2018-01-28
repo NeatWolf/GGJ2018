@@ -4880,7 +4880,6 @@ GameObject:
   - component: {fileID: 657710511}
   - component: {fileID: 657710510}
   - component: {fileID: 657710509}
-  - component: {fileID: 657710514}
   m_Layer: 5
   m_Name: PlayAgain
   m_TagString: Untagged
@@ -5013,18 +5012,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 657710507}
---- !u!114 &657710514
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 657710507}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc8dcddf0d0e64644b1611a41bc9506a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sound: {fileID: 0}
 --- !u!1 &658680974
 GameObject:
   m_ObjectHideFlags: 0
@@ -6452,7 +6439,6 @@ GameObject:
   - component: {fileID: 782043203}
   - component: {fileID: 782043202}
   - component: {fileID: 782043201}
-  - component: {fileID: 782043205}
   m_Layer: 5
   m_Name: Next
   m_TagString: Untagged
@@ -6581,18 +6567,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 782043199}
---- !u!114 &782043205
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 782043199}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc8dcddf0d0e64644b1611a41bc9506a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sound: {fileID: 0}
 --- !u!1 &783015438
 GameObject:
   m_ObjectHideFlags: 0
@@ -8226,7 +8200,6 @@ GameObject:
   - component: {fileID: 1022456350}
   - component: {fileID: 1022456349}
   - component: {fileID: 1022456348}
-  - component: {fileID: 1022456353}
   m_Layer: 5
   m_Name: Quit
   m_TagString: Untagged
@@ -8359,18 +8332,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1022456346}
---- !u!114 &1022456353
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1022456346}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc8dcddf0d0e64644b1611a41bc9506a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sound: {fileID: 0}
 --- !u!1 &1022474927
 GameObject:
   m_ObjectHideFlags: 0
