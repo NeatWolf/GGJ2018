@@ -12,7 +12,7 @@ public class ButtonSound : MonoBehaviour {
 
 
 	private void PlaySound () {
-		AudioSource.PlayClipAtPoint(sound, transform.position);
+		AudioSource.PlayClipAtPoint(sound, transform.position, 0.8f);
 	}
 
 	void Awake() {

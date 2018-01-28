@@ -1090,7 +1090,9 @@ MonoBehaviour:
   questions: {fileID: 11400000, guid: 3db0795e67af4944584d99c58b8286e2, type: 2}
   players: {fileID: 11400000, guid: 3e4a9326e5cad5742ac57ce0eceebbc8, type: 2}
   round: {fileID: 11400000, guid: 92d00f12a3110e34fb56908eb4eccff6, type: 2}
-  nextDialog: {fileID: 0}
+  settings: {fileID: 0}
+  roundBeginDialog: {fileID: 0}
+  gameOverDialog: {fileID: 0}
   transition: {fileID: 0}
   scoreBoardContainer: {fileID: 0}
 --- !u!1 &181773523
@@ -4840,8 +4842,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb9f9fee6317086408dd11da5867c591, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  winnerNameText: {fileID: 0}
+  winnerCharImg: {fileID: 0}
   replayButton: {fileID: 0}
   quitButton: {fileID: 0}
+  players: {fileID: 0}
 --- !u!114 &651085805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6506,7 +6511,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &789913558
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6574,8 +6579,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb9f9fee6317086408dd11da5867c591, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  winnerNameText: {fileID: 0}
+  winnerCharImg: {fileID: 0}
   replayButton: {fileID: 132946372}
   quitButton: {fileID: 536808487}
+  players: {fileID: 0}
 --- !u!1 &809073306
 GameObject:
   m_ObjectHideFlags: 0
@@ -6917,7 +6925,9 @@ MonoBehaviour:
   questions: {fileID: 0}
   players: {fileID: 0}
   round: {fileID: 0}
-  nextDialog: {fileID: 0}
+  settings: {fileID: 0}
+  roundBeginDialog: {fileID: 0}
+  gameOverDialog: {fileID: 0}
   transition: {fileID: 0}
   scoreBoardContainer: {fileID: 0}
 --- !u!114 &863089696
@@ -13983,8 +13993,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2143690088}
-        m_MethodName: 
+      - m_Target: {fileID: 2143690090}
+        m_MethodName: NextDialog
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15502,7 +15512,9 @@ MonoBehaviour:
   questions: {fileID: 11400000, guid: 3db0795e67af4944584d99c58b8286e2, type: 2}
   players: {fileID: 11400000, guid: 3e4a9326e5cad5742ac57ce0eceebbc8, type: 2}
   round: {fileID: 11400000, guid: 92d00f12a3110e34fb56908eb4eccff6, type: 2}
-  nextDialog: {fileID: 62560120}
+  settings: {fileID: 0}
+  roundBeginDialog: {fileID: 0}
+  gameOverDialog: {fileID: 0}
   transition: {fileID: 11400000, guid: d385701beb8fab44c8f96f0ab7fb56a3, type: 2}
   scoreBoardContainer: {fileID: 1651153883}
 --- !u!114 &2143690091
