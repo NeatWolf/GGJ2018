@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 044da950f15f1e940b76188dc2336f8f, type: 3}
   m_Name: Would You Like Some Peas
   m_EditorClassIdentifier: 
-  videoClipForward: {fileID: 0}
-  videoClipReverse: {fileID: 0}
-  answer: 
-  difficulty: 0
+  videoClipForward: {fileID: 32900000, guid: 9db741fbc5e574ff7ae0abd5bed64440, type: 3}
+  videoClipReverse: {fileID: 32900000, guid: fca1a78db0d4940dea4f6d3379b33647, type: 3}
+  answer: would you like some peas
+  difficulty: 6

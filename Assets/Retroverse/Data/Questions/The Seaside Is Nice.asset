@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 044da950f15f1e940b76188dc2336f8f, type: 3}
   m_Name: The Seaside Is Nice
   m_EditorClassIdentifier: 
-  videoClipForward: {fileID: 0}
-  videoClipReverse: {fileID: 0}
-  answer: 
-  difficulty: 0
+  videoClipForward: {fileID: 32900000, guid: 1738724a72ec0431bb9c43e50d43001e, type: 3}
+  videoClipReverse: {fileID: 32900000, guid: 06b887bbc4d3d4f668ce0934e61b90c4, type: 3}
+  answer: the seaside is nice
+  difficulty: 6

@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 044da950f15f1e940b76188dc2336f8f, type: 3}
   m_Name: So Am I
   m_EditorClassIdentifier: 
-  videoClipForward: {fileID: 0}
-  videoClipReverse: {fileID: 0}
-  answer: 
-  difficulty: 0
+  videoClipForward: {fileID: 32900000, guid: 289b0e99252c942699a2f0a372fc8a36, type: 3}
+  videoClipReverse: {fileID: 32900000, guid: 3d1b6e88671204d2095ecd0f7cfe87e7, type: 3}
+  answer: so am i
+  difficulty: 4

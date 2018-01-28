@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 044da950f15f1e940b76188dc2336f8f, type: 3}
   m_Name: Are You Well
   m_EditorClassIdentifier: 
-  videoClipForward: {fileID: 0}
-  videoClipReverse: {fileID: 0}
-  answer: 
-  difficulty: 0
+  videoClipForward: {fileID: 32900000, guid: 84f4a98bab8e842ddaea19417bace51e, type: 3}
+  videoClipReverse: {fileID: 32900000, guid: c5a33b4cf8de84e5abc8e81b5c0c0a72, type: 3}
+  answer: are you well
+  difficulty: 4
