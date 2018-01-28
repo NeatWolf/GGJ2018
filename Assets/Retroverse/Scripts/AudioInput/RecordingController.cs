@@ -12,7 +12,7 @@ public class RecordingController : MonoBehaviour {
 
 	ClipRecording clipRecording;
 
-	private AudioSource audio;
+	private AudioSource audioSrc;
 
 	private float timer;
 
@@ -22,15 +22,15 @@ public class RecordingController : MonoBehaviour {
 	}
 
 	public void PlayForwards () {
-		clipRecording.PlayClipForwards(audio, timer);
+		clipRecording.PlayClipForwards(audioSrc, timer);
 	}
 
 	public void PlayBackwards () {
-		clipRecording.PlayClipBackwards(audio, timer);
+		clipRecording.PlayClipBackwards(audioSrc, timer);
 	}
 
 	public void Restart () {
-		audio.Stop();
+		audioSrc.Stop();
 
 		clipRecording = new ClipRecording();
 		
@@ -43,7 +43,7 @@ public class RecordingController : MonoBehaviour {
 	}
 
 	void Awake () {
-		audio = GetComponent<AudioSource>();
+		audioSrc = GetComponent<AudioSource>();
 	}
 
 	// Use this for initialization
@@ -67,14 +67,14 @@ public class RecordingController : MonoBehaviour {
 					timer += Time.deltaTime;
 
 				if (timer >= recordTime) {
-					clipRecording.StopClip(audio);
+					clipRecording.StopClip(audioSrc);
 				}
 			} else if (clipRecording.GetPlayDir() < 0) {
 				if (timer > 0)
 					timer -= Time.deltaTime;
 
 				if (timer <= 0) {
-					clipRecording.StopClip(audio);
+					clipRecording.StopClip(audioSrc);
 				}				
 			}
 
