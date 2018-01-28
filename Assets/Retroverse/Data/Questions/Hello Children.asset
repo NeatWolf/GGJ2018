@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 044da950f15f1e940b76188dc2336f8f, type: 3}
   m_Name: Hello Children
   m_EditorClassIdentifier: 
-  videoClipForward: {fileID: 32900000, guid: 37bc7ba98a29b2a409de323a966f0336, type: 3}
-  videoClipReverse: {fileID: 0}
+  videoClipForward: {fileID: 32900000, guid: b0ea8465d39544f1fa7c7591101d7d0f, type: 3}
+  videoClipReverse: {fileID: 32900000, guid: b0ea8465d39544f1fa7c7591101d7d0f, type: 3}
   answer: hello children
   difficulty: 5

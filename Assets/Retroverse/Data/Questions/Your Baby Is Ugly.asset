@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 044da950f15f1e940b76188dc2336f8f, type: 3}
   m_Name: Your Baby Is Ugly
   m_EditorClassIdentifier: 
-  videoClipForward: {fileID: 0}
-  videoClipReverse: {fileID: 0}
-  answer: 
-  difficulty: 0
+  videoClipForward: {fileID: 32900000, guid: 5b12369b73f22442bb4ea6d8f9048365, type: 3}
+  videoClipReverse: {fileID: 32900000, guid: 67ff9e7b36ba74232937da95dacdd839, type: 3}
+  answer: your baby is ugly
+  difficulty: 5

@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 044da950f15f1e940b76188dc2336f8f, type: 3}
   m_Name: Its Nice To See You
   m_EditorClassIdentifier: 
-  videoClipForward: {fileID: 0}
-  videoClipReverse: {fileID: 0}
-  answer: 
-  difficulty: 0
+  videoClipForward: {fileID: 32900000, guid: cfeafea42a74f4c03abdb152da9fb7fa, type: 3}
+  videoClipReverse: {fileID: 32900000, guid: ee73d85cfd373434aaafe42cfeb68bee, type: 3}
+  answer: its nice to see you
+  difficulty: 6

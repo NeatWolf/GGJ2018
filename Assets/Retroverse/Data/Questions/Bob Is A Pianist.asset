@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 044da950f15f1e940b76188dc2336f8f, type: 3}
   m_Name: Bob Is A Pianist
   m_EditorClassIdentifier: 
-  videoClipForward: {fileID: 0}
-  videoClipReverse: {fileID: 0}
-  answer: 
-  difficulty: 0
+  videoClipForward: {fileID: 32900000, guid: f94e239b0c9f64522987ecaf6da975b5, type: 3}
+  videoClipReverse: {fileID: 32900000, guid: ff72c24773a984a5f9539d73ffed3ea9, type: 3}
+  answer: bob is a pianist
+  difficulty: 5
