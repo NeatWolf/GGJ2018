@@ -40,24 +40,31 @@ namespace GGJ2018 {
 			players.FirstPlayer();
 
 			int numPlayers = players.NumPlayers();
+
+			Debug.Log(numPlayers);
 			int j=0;
 			Player speakingPlayer = players.CurrentPlayer();
 			for(int i=0;i<numPlayers;i++) {
 				Player player = players.GetPlayerAt(i);
+				Debug.Log("<b>" + player.name + "</b>");
 				int score = 0;
 				if( player == speakingPlayer && numPlayers > 1 ){
 					
 				}
 				else {
 					int playerDistance = Levenshtein.Distance(round.guesses[j], answer);
+					Debug.LogFormat("Distance: {0}", playerDistance.ToString());
+
 					float percent = Mathf.Clamp01((1f - (playerDistance/maxDistance)));
+					Debug.LogFormat("Percent: {0}", percent.ToString());
+					Debug.Break();
 					score = Mathf.RoundToInt(percent  * 100);
 					player.score += score;
 					j+=1;
 				}
 				
-				
-				
+				Debug.LogFormat("Round score: {0}, Total score: {1}", score, player.score);
+				Debug.Break();
 				ScorePanel newPanel = Instantiate<ScorePanel>(scorePanel, scoreBoardContainer);
 
 				newPanel.charImg.sprite = player.character.charSprite;
