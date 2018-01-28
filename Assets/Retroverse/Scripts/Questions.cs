@@ -7,7 +7,6 @@ public class Questions : ScriptableObject, ISerializationCallbackReceiver
 {
     public List<Question> questions;
     [System.NonSerialized]
-    public int currentRound;
 
     int questionIndex = 0;
 
@@ -37,7 +36,6 @@ public class Questions : ScriptableObject, ISerializationCallbackReceiver
 
     public void OnAfterDeserialize()
     {
-        currentRound = 1;
         
     }
 
