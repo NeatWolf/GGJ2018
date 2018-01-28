@@ -39,6 +39,9 @@ public class ClipRecording {
 		playDir = src.pitch;
 	}
 	
+	public void PlayClipBackwards(AudioSource src){
+		PlayClipBackwards(src,recordTime);
+	}
 	public void PlayClipBackwards (AudioSource src, float time) {
 		if (isRecording || clip == null || time <= 0.1f)
 			return;

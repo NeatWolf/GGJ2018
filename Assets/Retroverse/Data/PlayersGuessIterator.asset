@@ -11,4 +11,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9886e591568bfa4dbeb7361c7879274, type: 3}
   m_Name: PlayersGuessIterator
   m_EditorClassIdentifier: 
-  players: {fileID: 0}
+  players: {fileID: 11400000, guid: 3e4a9326e5cad5742ac57ce0eceebbc8, type: 2}

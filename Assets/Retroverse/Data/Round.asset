@@ -12,4 +12,3 @@ MonoBehaviour:
   m_Name: Round
   m_EditorClassIdentifier: 
   guesses: []
-  playerRecording: {fileID: 0}

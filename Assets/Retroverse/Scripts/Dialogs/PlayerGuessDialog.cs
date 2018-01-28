@@ -1,6 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 namespace GGJ2018 {
 	public class PlayerGuessDialog : Dialog {
 
@@ -19,12 +22,80 @@ namespace GGJ2018 {
 		[SerializeField]
 		PlayerIterator iterator;
 
-		void Start () {
+		[SerializeField]
+		Button replayButton;
+
+		[SerializeField]
+		Text playerNameField;
+
+		[SerializeField]
+		Image characterImage;
+
+		[SerializeField]
+		InputField phraseInput;
+
+		[SerializeField]
+		AudioSource audioSource;
+
+		[SerializeField]
+		Waveform waveform;
+
+		void Awake(){
+			phraseInput.onEndEdit.AddListener( OnEditEnd );
+			replayButton.onClick.AddListener( ReplayClip );
+		}
+
+		void Update(){
+			waveform.SetPlayhead( audioSource.time / audioSource.clip.length );
 			
 		}
-		
-		void Update () {
-			
+
+        override public void Show(){
+			waveform.gameObject.SetActive(true);
+			if( players.NumPlayers()>1 && iterator.CurrentPlayer() == players.CurrentPlayer() ){
+				iterator.NextPlayer();
+			}
+			base.Show();
+			playerNameField.text = iterator.CurrentPlayer().name;
+			characterImage.sprite = iterator.CurrentPlayer().character.charSprite;
+			phraseInput.text = "";
+		}
+
+		override public void Hide()
+		{
+			base.Hide();
+			waveform.gameObject.SetActive(false);
+
+		}
+
+		private void OnEditEnd(string guess)
+        {
+			round.guesses.Add( guess );
+			NextDialog();
+        }
+
+		void ReplayClip()
+		{
+			round.playerRecording.PlayClipBackwards( audioSource );
+
+		}
+
+		void NextDialog()
+		{
+			Hide();
+
+
+
+			if( iterator.NextPlayer() ){
+				if( players.NumPlayers()>1 && iterator.CurrentPlayer() == players.CurrentPlayer() ){
+					NextDialog();
+					return;
+				}
+				transistion.Show( this );
+			}
+			else {
+				transistion.Show(nextDialog);
+			}
 		}
 	}
 }
