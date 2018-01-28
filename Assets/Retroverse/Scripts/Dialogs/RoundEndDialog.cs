@@ -87,7 +87,8 @@ namespace GGJ2018 {
 			}
 
 			speakingPlayer.score += pointsForSpeaker;
-			
+
+			speakingScorePanel.background.color = settings.speakerPanelColor;
 			speakingScorePanel.scoreThisRound.text = pointsForSpeaker.ToString();
 			speakingScorePanel.totalScore.text = speakingPlayer.score.ToString();
 
@@ -105,6 +106,13 @@ namespace GGJ2018 {
 				nextDialog = roundBeginDialog;
 			}
 			transition.Show(nextDialog);
+		}
+
+		public override void Hide() {
+			base.Hide();
+			while (scoreBoardContainer.childCount > 0) {
+				Destroy(scoreBoardContainer.GetChild(0).gameObject);
+			}
 		}
 
 		// Use this for initialization
