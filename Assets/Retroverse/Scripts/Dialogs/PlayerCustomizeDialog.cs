@@ -34,6 +34,13 @@ namespace GGJ2018 {
 
 		private int charIndex = 0;
 
+		public override void Show(){
+			base.Show();
+			ResetChar();
+			playerNameTitle.text = playerIterator.CurrentPlayer().name;
+			playerNameInput.text = "";
+
+		}
 		public void ResetChar () {
 			charIndex = 0;
 			UpdateChar();
@@ -65,31 +72,21 @@ namespace GGJ2018 {
 		}
 
 		public void NextPlayer () {
-			players.CurrentPlayer().name = playerNameInput.text.PadRight('_');
-			players.CurrentPlayer().character = characters[charIndex];
-
-			bool noMorePlayers = players.NextPlayer();
-
-			playerNameTitle.text = players.CurrentPlayer().name;
-
-			playerNameInput.text = "";
+			playerIterator.CurrentPlayer().name = playerNameInput.text.PadRight(4,'_');
+			playerIterator.CurrentPlayer().character = characters[charIndex];
 
 			ResetChar();
 
-			if (noMorePlayers) {
-				Hide();
+			Hide();
+			if (playerIterator.NextPlayer()) {
+				
+				transition.Show( this );
+			}
+			else {
 				transition.Show( nextDialog );
 			}
 		}
 
-		// Use this for initialization
-		void Start () {
-			
-		}
-		
-		// Update is called once per frame
-		void Update () {
-			
-		}
+
 	}
 }
