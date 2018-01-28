@@ -93,6 +93,7 @@ public class VideoPlaybackDialog : Dialog {
 
 	void NextDialog()
 	{
+		Hide();
 		videoPlayer.Stop();
 		transition.Show( nextDialog );
 	}

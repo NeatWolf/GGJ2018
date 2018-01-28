@@ -18,6 +18,9 @@ namespace GGJ2018 {
 		[SerializeField]
 		private Round round;
 
+		[SerializeField]
+		Dialog nextDialog;
+
 		private float recordTime = 3f, countdownTime = 3f;
 		
 		ClipRecording clipRecording;
