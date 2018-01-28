@@ -17,6 +17,13 @@ namespace GGJ2018 {
 		[SerializeField]
 		private Round round;
 
+
+		[SerializeField]
+		private Dialog nextDialog;
+
+		[SerializeField]
+		private DialogTransistion transition;
+
 		private List<int> scoresThisRound = new List<int>();
 
 		public override void Show() {
@@ -53,6 +60,11 @@ namespace GGJ2018 {
 				lastPlayer = players.NextPlayer();
 				i+=1;
 			}
+		}
+
+		public void NextDialog () {
+			Hide();
+			transition.Show(nextDialog);
 		}
 
 		// Use this for initialization

@@ -476,6 +476,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08ff6e5cf8cd51341be8b8aebdeb0fbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scorePanel: {fileID: 0}
   questions: {fileID: 0}
   players: {fileID: 0}
   round: {fileID: 0}
@@ -2479,7 +2480,7 @@ MonoBehaviour:
   players: {fileID: 11400000, guid: 3e4a9326e5cad5742ac57ce0eceebbc8, type: 2}
   transition: {fileID: 11400000, guid: d385701beb8fab44c8f96f0ab7fb56a3, type: 2}
   nextDialog: {fileID: 1997572636}
-  playerIterator: {fileID: 0}
+  playerIterator: {fileID: 11400000, guid: 5d6338e044f08ec4c9c6bdc4a8398ff0, type: 2}
 --- !u!114 &651716171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6184,6 +6185,21 @@ Prefab:
     - target: {fileID: 1545354094774470, guid: 5167fc66190b5bb47a45677dc8c1a52c, type: 2}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114647359250458608, guid: 5167fc66190b5bb47a45677dc8c1a52c,
+        type: 2}
+      propertyPath: playerName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114647359250458608, guid: 5167fc66190b5bb47a45677dc8c1a52c,
+        type: 2}
+      propertyPath: scoreThisRound
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114647359250458608, guid: 5167fc66190b5bb47a45677dc8c1a52c,
+        type: 2}
+      propertyPath: totalScore
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5167fc66190b5bb47a45677dc8c1a52c, type: 2}
