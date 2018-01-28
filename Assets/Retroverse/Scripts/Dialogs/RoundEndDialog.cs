@@ -48,7 +48,6 @@ namespace GGJ2018 {
 			int pointsForSpeaker = 0;
 			for(int i=0;i<numPlayers;i++) {
 				Player player = players.GetPlayerAt(i);
-				Debug.Log("<b>" + player.name + "</b>");
 				int score = 0;
 
 				ScorePanel newPanel = Instantiate<ScorePanel>(scorePanel, scoreBoardContainer);
@@ -58,10 +57,8 @@ namespace GGJ2018 {
 				}
 				else {
 					int playerDistance = round.guesses[j].LevenshteinDistance(answer);
-					Debug.LogFormat("Distance: {0}", playerDistance.ToString());
 
 					float percent = Mathf.Clamp01((1f - (1f*playerDistance/maxDistance)));
-					Debug.LogFormat("Percent: {0}", percent.ToString());
 					
 					score = Mathf.RoundToInt(percent  * 100);
 					player.score += score;
@@ -72,8 +69,6 @@ namespace GGJ2018 {
 					j+=1;
 				}
 				
-				Debug.LogFormat("Round score: {0}, Total score: {1}", score, player.score);
-
 				newPanel.charImg.sprite = player.character.charSprite;
 				newPanel.playerName.text = player.name;
 				newPanel.scoreThisRound.text = score.ToString();
@@ -95,8 +90,12 @@ namespace GGJ2018 {
 
 			Dialog nextDialog;
 
+			questions.NextQuestion();
+
 			if (round.roundNum >= settings.numberOfRounds) {
 				nextDialog = gameOverDialog;
+				players.FirstPlayer();
+				round.roundNum = 1;
 			} else {
 				round.roundNum += 1;
 				players.NextPlayer();
