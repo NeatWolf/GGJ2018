@@ -17,9 +17,5 @@ public class UrlButton : MonoBehaviour {
 			Application.OpenURL( readmeUrl.text );
 		});
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
 }
