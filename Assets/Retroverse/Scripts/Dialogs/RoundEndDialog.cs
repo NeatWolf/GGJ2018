@@ -17,9 +17,12 @@ namespace GGJ2018 {
 		[SerializeField]
 		private Round round;
 
+		[SerializeField]
+		private Settings settings;
+
 
 		[SerializeField]
-		private Dialog nextDialog;
+		private Dialog roundBeginDialog, gameOverDialog;
 
 		[SerializeField]
 		private DialogTransistion transition;
@@ -78,6 +81,15 @@ namespace GGJ2018 {
 
 		public void NextDialog () {
 			Hide();
+
+			Dialog nextDialog;
+
+			if (round.roundNum >= settings.numberOfRounds) {
+				nextDialog = gameOverDialog;
+			} else {
+				round.roundNum += 1;
+				nextDialog = roundBeginDialog;
+			}
 			transition.Show(nextDialog);
 		}
 

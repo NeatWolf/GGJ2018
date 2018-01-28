@@ -7,6 +7,7 @@ using UnityEngine.EventSystems;
 public class Settings : ScriptableObject 
 {
 	public Color32[] palette;
+	public int numberOfRounds;
 	public int numberOfTries;
 	public string triesRemainingText = "Tries Left {0}";
 }
