@@ -2,15 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Text.RegularExpressions;
+using UnityEngine.Profiling;
 
 public class Levenshtein : MonoBehaviour {
 
     public static int Distance (string _a, string _b) {
+        Profiler.BeginSample("Distance");
         string a = NormString(_a), b = NormString(_b);
-        return Distance(a, b, a.Length, b.Length);
+        return Distance(ref a, ref b, a.Length, b.Length);
+        Profiler.EndSample();
     }
 
-    private static int Distance (string a, string b, int lenA, int lenB)
+    private static int Distance (ref string a, ref string b, int lenA, int lenB)
     {
         int cost;
 
@@ -23,12 +26,13 @@ public class Levenshtein : MonoBehaviour {
             cost = 1;
         }
 
-        return Mathf.Min(Distance(a, b, lenA - 1, lenB) + 1,
-                         Distance(a, b, lenA, lenB-1) + 1,
-                         Distance(a, b, lenA - 1, lenB - 1) + cost);
+        return Mathf.Min(Distance(ref a, ref b, lenA - 1, lenB) + 1,
+                         Distance(ref a, ref b, lenA, lenB-1) + 1,
+                         Distance(ref a, ref b, lenA - 1, lenB - 1) + cost);
     }
 
     public static string NormString (string a) {
+        Profiler.BeginSample("NormString");
         Regex rgx_NonAlphanum = new Regex("[^a-zA-Z0-9 -]");
         Regex rgx_MultiSpace = new Regex("[ ]{2,}");
 
@@ -36,6 +40,7 @@ public class Levenshtein : MonoBehaviour {
         norm = rgx_MultiSpace.Replace(norm, " ");
 
         return norm.Trim();
+        Profiler.EndSample();
     }
 
     // Use this for initialization
