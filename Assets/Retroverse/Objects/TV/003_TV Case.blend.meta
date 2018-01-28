@@ -6,11 +6,45 @@ ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Button_1
+    100004: Button_2
+    100006: Dial_1
+    100008: Dial_2
+    100010: Screen
+    100012: TV_Box
     400000: //RootNode
+    400002: Button_1
+    400004: Button_2
+    400006: Dial_1
+    400008: Dial_2
+    400010: Screen
+    400012: TV_Box
     2100000: Material
+    2100002: black_plastic
+    2100004: silver
+    2100006: unnamed
+    2100008: brown-wood
     2300000: //RootNode
+    2300002: Button_1
+    2300004: Button_2
+    2300006: Dial_1
+    2300008: Dial_2
+    2300010: Screen
+    2300012: TV_Box
     3300000: //RootNode
+    3300002: Button_1
+    3300004: Button_2
+    3300006: Dial_1
+    3300008: Dial_2
+    3300010: Screen
+    3300012: TV_Box
     4300000: Cube
+    4300002: Dial_2
+    4300004: Button_1
+    4300006: Button_2
+    4300008: Dial_1
+    4300010: Screen
+    4300012: TV_Box
     7400000: Default Take
     9500000: //RootNode
   externalObjects: {}

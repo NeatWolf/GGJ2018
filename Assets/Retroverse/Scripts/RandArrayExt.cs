@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-
+using UnityEngine;
 
 static class RandArrayExt
 {
@@ -9,11 +9,10 @@ static class RandArrayExt
 	{
 		if (array == null)
 			return array;
-		System.Random rand = new System.Random();
 		int l = (array.Length - 1);
 		for (int i=0; i<l; i++) {
 			T tmp = array [i];
-			int r = rand.Next (i, array.Length);
+			int r = Random.Range (i, array.Length);
 			array [i] = array [r];
 			array [r] = tmp;
 		}
@@ -24,11 +23,10 @@ static class RandArrayExt
 	{
 		if (array == null)
 			return null;
-		System.Random rand = new System.Random();
 		int l = array.Count;
 		for (int i=0; i<(l-1); i++) {
 			T tmp = array [i];
-			int r = rand.Next (i, l);
+			int r = Random.Range(i, l);
 			array [i] = array [r];
 			array [r] = tmp;
 		}
@@ -37,13 +35,13 @@ static class RandArrayExt
 	
 	public static T PickRandom<T> (this T[] array)
 	{
-		int i = random.Next (0, array.Length);
+		int i = Random.Range(0, array.Length);
 		return array [i];
 	}
 	
 	public static T PickRandom<T>(this List<T> array)
 	{
-		int i = random.Next (0, array.Count);
+		int i = Random.Range(0, array.Count);
 		return array [i];
 	}
 	

@@ -26,6 +26,7 @@ public class Questions : ScriptableObject, ISerializationCallbackReceiver
     }
 
     public void ShuffleQuestions(){
+        Random.InitState( (int)(System.DateTime.Now.Ticks % int.MaxValue ) );
         questions.Shuffle();
     }
 
