@@ -4070,6 +4070,7 @@ MonoBehaviour:
   audio: {fileID: 229563517}
   waveform: {fileID: 154969228}
   countdownText: {fileID: 1426786911}
+  round: {fileID: 11400000, guid: 92d00f12a3110e34fb56908eb4eccff6, type: 2}
 --- !u!1 &1283192186
 GameObject:
   m_ObjectHideFlags: 0

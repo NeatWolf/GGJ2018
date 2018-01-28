@@ -15,8 +15,11 @@ namespace GGJ2018 {
 		[SerializeField]
 		private Text countdownText;
 
-		private float recordTime = 3f, countdownTime = 3f;
+		[SerializeField]
+		private Round round;
 
+		private float recordTime = 3f, countdownTime = 3f;
+		
 		ClipRecording clipRecording;
 
 		private float playTimer, countdownTimer;
@@ -115,6 +118,8 @@ namespace GGJ2018 {
 		private void CompleteRecording () {
 			clipRecording.StopRecording();
 			recorded = true;
+
+			round.playerRecording = clipRecording;
 
 			playTimer = recordTime;
 			PlayBackwards();
