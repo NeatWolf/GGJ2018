@@ -21,13 +21,16 @@ namespace GGJ2018 {
 		[SerializeField]
 		Dialog nextDialog;
 
+		[SerializeField]
+		DialogTransistion transistion;
+
 		private float recordTime = 3f, countdownTime = 3f;
 		
 		ClipRecording clipRecording;
 
 		private float playTimer, countdownTimer;
 
-		private bool isCountdown, recorded;
+		private bool isCountdown, recorded, playedBackwards;
 
 		public void StartCountdown () {
 			countdownTimer = 0;
@@ -51,6 +54,7 @@ namespace GGJ2018 {
 			audio.Stop();
 
 			recorded = false;
+			playedBackwards = false;
 
 			clipRecording = new ClipRecording();
 			
@@ -112,6 +116,11 @@ namespace GGJ2018 {
 
 					if (playTimer <= 0) {
 						clipRecording.StopClip(audio);
+						if (!playedBackwards) {
+							playedBackwards = true;
+							transistion.Show(nextDialog);
+							Hide();
+						}
 					}
 				}
 
