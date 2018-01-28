@@ -111,7 +111,9 @@ namespace GGJ2018 {
 		public override void Hide() {
 			base.Hide();
 			while (scoreBoardContainer.childCount > 0) {
-				Destroy(scoreBoardContainer.GetChild(0).gameObject);
+				GameObject child = scoreBoardContainer.GetChild(0).gameObject;
+				child.transform.SetParent(null);
+				Destroy(child);
 			}
 		}
 
