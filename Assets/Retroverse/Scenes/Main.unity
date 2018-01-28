@@ -983,7 +983,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e97924db63d8c2c4197bcc00539dc28c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transition: {fileID: 11400000, guid: d385701beb8fab44c8f96f0ab7fb56a3, type: 2}
+  transition: {fileID: 11400000, guid: d41e462ca55557248812db3a3b9cb76a, type: 2}
   nextDialog: {fileID: 956950247}
   videoPlayer: {fileID: 1866826774}
   questions: {fileID: 11400000, guid: 3db0795e67af4944584d99c58b8286e2, type: 2}
@@ -3461,6 +3461,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a91ba1e5acb3e34791a149286aba49c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextDialog: {fileID: 181531886}
+  transistion: {fileID: 11400000, guid: d385701beb8fab44c8f96f0ab7fb56a3, type: 2}
+  round: {fileID: 11400000, guid: 92d00f12a3110e34fb56908eb4eccff6, type: 2}
+  players: {fileID: 11400000, guid: 3e4a9326e5cad5742ac57ce0eceebbc8, type: 2}
+  iterator: {fileID: 11400000, guid: ae7ff0356aba45943ab8cf42fb591715, type: 2}
 --- !u!1 &784567661
 GameObject:
   m_ObjectHideFlags: 0
@@ -3891,6 +3896,7 @@ MonoBehaviour:
   repeatPhraseText: {fileID: 1091885758}
   round: {fileID: 11400000, guid: 92d00f12a3110e34fb56908eb4eccff6, type: 2}
   nextDialog: {fileID: 783015442}
+  transistion: {fileID: 11400000, guid: d385701beb8fab44c8f96f0ab7fb56a3, type: 2}
 --- !u!114 &956950248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7150,7 +7156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   button: {fileID: 776531542}
   nextDialog: {fileID: 284312274}
-  transistion: {fileID: 11400000, guid: d385701beb8fab44c8f96f0ab7fb56a3, type: 2}
+  transistion: {fileID: 11400000, guid: 6b9267ddc2ac9c6458fdb1ed37e39ed1, type: 2}
 --- !u!114 &1997572637
 MonoBehaviour:
   m_ObjectHideFlags: 0

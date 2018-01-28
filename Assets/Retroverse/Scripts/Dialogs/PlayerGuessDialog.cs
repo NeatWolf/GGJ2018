@@ -10,6 +10,15 @@ namespace GGJ2018 {
 		[SerializeField]
 		DialogTransistion transistion;
 
+		[SerializeField]
+		Round round;
+
+		[SerializeField]
+		Players players;
+
+		[SerializeField]
+		PlayerIterator iterator;
+
 		void Start () {
 			
 		}

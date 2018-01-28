@@ -18,6 +18,15 @@ public class Players : ScriptableObject
         
     }
 
+    public int NumPlayers(){
+        return players.Count;
+    }
+
+    public Player GetPlayerAt(int i)
+    {
+        return players[i];
+    }
+
     public Player CurrentPlayer(){
         Debug.Log(playerIndex);
         return players[playerIndex];
