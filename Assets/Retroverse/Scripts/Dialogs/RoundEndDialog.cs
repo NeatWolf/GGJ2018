@@ -77,7 +77,7 @@ namespace GGJ2018 {
 				
 			}
 
-			if (speakingPlayer != null) {
+			if (speakingScorePanel != null) {
 				speakingPlayer.score += pointsForSpeaker;
 
 				speakingScorePanel.background.color = settings.speakerPanelColor;
