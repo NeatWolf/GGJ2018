@@ -26,14 +26,19 @@ public class Questions : ScriptableObject, ISerializationCallbackReceiver
     }
 
     public void ShuffleQuestions(){
-        Random.InitState( (int)(System.DateTime.Now.Ticks % int.MaxValue ) );
+        
         questions.Shuffle();
+    }
+
+    void OnEnable(){
+        Random.InitState( (int)(System.DateTime.Now.Ticks % int.MaxValue ) );
+        ShuffleQuestions();
     }
 
     public void OnAfterDeserialize()
     {
         currentRound = 1;
-        ShuffleQuestions();
+        
     }
 
     public void OnBeforeSerialize()
