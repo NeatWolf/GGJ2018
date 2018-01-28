@@ -53,18 +53,16 @@ namespace GGJ2018 {
 				}
 				else {
 					int playerDistance = Levenshtein.Distance(round.guesses[j], answer);
-					Debug.LogFormat("Distance: {0}", playerDistance.ToString());
+					Debug.Log("Guess: " + round.guesses[j]);
+					float percent = Mathf.Clamp01((1f - (1f*playerDistance/maxDistance)));
 
-					float percent = Mathf.Clamp01((1f - (playerDistance/maxDistance)));
-					Debug.LogFormat("Percent: {0}", percent.ToString());
-					Debug.Break();
+					Debug.LogFormat("player distance: {0}, max distance: {1}", playerDistance, maxDistance);
+					Debug.Log("(playerDistance/maxDistance): " + (playerDistance/maxDistance));
 					score = Mathf.RoundToInt(percent  * 100);
 					player.score += score;
 					j+=1;
 				}
 				
-				Debug.LogFormat("Round score: {0}, Total score: {1}", score, player.score);
-				Debug.Break();
 				ScorePanel newPanel = Instantiate<ScorePanel>(scorePanel, scoreBoardContainer);
 
 				newPanel.charImg.sprite = player.character.charSprite;
