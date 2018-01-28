@@ -11,4 +11,5 @@ public class Settings : ScriptableObject
 	public int numberOfTries;
 	public string triesRemainingText = "Tries Left {0}";
 	public int speakerPointBonus = 20;
+	public Color speakerPanelColor;
 }
