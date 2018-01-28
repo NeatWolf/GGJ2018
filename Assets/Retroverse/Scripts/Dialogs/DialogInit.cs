@@ -16,6 +16,10 @@ namespace GGJ2018 {
 				dialog.Init();
 				dialog.gameObject.SetActive(false);
 			}
+			
+		}
+
+		void Start(){
 			transition.Show( dialogs[0] );
 		}
 		
