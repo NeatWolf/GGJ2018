@@ -1,0 +1,7 @@
+Score is between 0 and 100 with 100 being the best
+
+We define maximum levenshtein distance as comparing with an empty string. Anything worse than that is clamped.
+
+The person who read out the phrase doesn't answer. They get 10-20 points (not decided yet) for every person who gets above 50 points for their answers.
+
+e.g. "I like pizza" - max score is 12
