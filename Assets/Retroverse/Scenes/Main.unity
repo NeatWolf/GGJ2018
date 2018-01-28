@@ -4707,7 +4707,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   videoPlayer: {fileID: 1866826774}
-  clip: {fileID: 32900000, guid: a660609a5060d4544b7ecf1be8743e30, type: 3}
+  clip: {fileID: 32900000, guid: 6ad973e3b568147d69b2d4a38e3a9dba, type: 3}
   audioSource: {fileID: 1866826775}
   transistion: {fileID: 11400000, guid: 9537d9df53a8db0478972b053eea2ff0, type: 2}
   nextDialog: {fileID: 1403753798}
