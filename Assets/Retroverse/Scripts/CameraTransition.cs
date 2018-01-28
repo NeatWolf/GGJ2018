@@ -63,7 +63,7 @@ namespace GGJ2018 {
 				remaining -= Time.deltaTime;
 				if( remaining < 0 )
 					remaining = 0;
-				float t = HermiteEase( 1f-remaining/delay );
+				float t = HermiteEase( 1f-remaining/duration );
 				if( changeRotation ){
 					targetCam.transform.rotation = Quaternion.Lerp(startRotation,endRotation,t);
 				}

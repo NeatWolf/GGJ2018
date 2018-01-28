@@ -27,7 +27,10 @@ public class RoundText : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void OnEnable(){
+	public void OnEnable(){
+		if( players.CurrentPlayer() == null ){
+			return;
+		}
 		roundText.text = string.Format( formatStr, questions.currentRound );
 		characterImage.sprite = players.CurrentPlayer().character.charSprite;
 		playerNameField.text = players.CurrentPlayer().name;

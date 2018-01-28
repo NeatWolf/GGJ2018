@@ -29,6 +29,9 @@ namespace GGJ2018 {
 		[SerializeField]
 		private Dialog nextDialog;
 
+		[SerializeField]
+		PlayerIterator playerIterator;
+
 		private int charIndex = 0;
 
 		public void ResetChar () {
@@ -62,7 +65,7 @@ namespace GGJ2018 {
 		}
 
 		public void NextPlayer () {
-			players.CurrentPlayer().name = playerNameInput.text;
+			players.CurrentPlayer().name = playerNameInput.text.PadRight('_');
 			players.CurrentPlayer().character = characters[charIndex];
 
 			bool noMorePlayers = players.NextPlayer();
