@@ -74,6 +74,9 @@ namespace GGJ2018 {
 
 		private void OnEditEnd(string guess)
         {
+			if( guess == string.Empty){
+				return;
+			}
 			round.guesses.Add( guess );
 			NextDialog();
         }
