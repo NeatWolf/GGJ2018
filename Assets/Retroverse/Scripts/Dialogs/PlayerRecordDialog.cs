@@ -1,84 +1,120 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 namespace GGJ2018 {
 	public class PlayerRecordDialog : Dialog {
 	
-	[SerializeField]
-	private Waveform waveform;
+		[SerializeField]
+		private AudioSource audio;
 
-	private float recordTime = 3f, countdownTime = 3f;
+		[SerializeField]
+		private Waveform waveform;
 
-	ClipRecording clipRecording;
+		[SerializeField]
+		private Text countdownText;
 
-	private AudioSource audio;
+		private float recordTime = 5f, countdownTime = 3f;
 
-	private float playTimer, countdownTimer;
+		ClipRecording clipRecording;
 
-	public void Record () {
-		clipRecording.RecordClip(recordTime);
-	}
+		private float playTimer, countdownTimer;
 
-	public void PlayForwards () {
-		clipRecording.PlayClipForwards(audio, playTimer);
-	}
+		private bool isCountdown, recorded;
 
-	public void PlayBackwards () {
-		clipRecording.PlayClipBackwards(audio, playTimer);
-	}
+		public void StartCountdown () {
+			countdownTimer = 0;
+			//waveform.gameObject.SetActive(true);
+			isCountdown = true;
+		}
 
-	public void Restart () {
-		audio.Stop();
+		public void Record () {
+			clipRecording.RecordClip(recordTime);
+		}
 
-		clipRecording = new ClipRecording();
-		
-		waveform.SetClipRecording(clipRecording);
+		public void PlayForwards () {
+			clipRecording.PlayClipForwards(audio, playTimer);
+		}
 
-		waveform.ClearWaveform();
+		public void PlayBackwards () {
+			clipRecording.PlayClipBackwards(audio, playTimer);
+		}
 
-		playTimer = 0;
+		public void Restart () {
+			audio.Stop();
 
-	}
+			recorded = false;
 
-	void Awake () {
-		audio = GetComponent<AudioSource>();
-	}
+			clipRecording = new ClipRecording();
+			
+			waveform.SetClipRecording(clipRecording);
 
-	// Use this for initialization
-	void Start () {
-		Restart();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		if (clipRecording.IsRecording()) {
-			playTimer += Time.deltaTime;
+			waveform.gameObject.SetActive(true);
+			waveform.ClearWaveform();
+			//waveform.gameObject.SetActive(false);
 
-			waveform.DrawWaveform();
-
-			if (playTimer >= recordTime)
-				clipRecording.StopRecording();
-
-		} else if (clipRecording.IsPlaying()) {
-			if (clipRecording.GetPlayDir() > 0) {
-				if (playTimer < recordTime)
-					playTimer += Time.deltaTime;
-
-				if (playTimer >= recordTime) {
-					clipRecording.StopClip(audio);
-				}
-			} else if (clipRecording.GetPlayDir() < 0) {
-				if (playTimer > 0)
-					playTimer -= Time.deltaTime;
-
-				if (playTimer <= 0) {
-					clipRecording.StopClip(audio);
-				}				
-			}
+			playTimer = 0;
 
 		}
-		waveform.SetPlayhead(playTimer/recordTime);
 
-	}
+		void Awake () {
+
+		}
+
+		// Use this for initialization
+		void Start () {
+			Restart();
+			StartCountdown();
+		}
+		
+		// Update is called once per frame
+		void Update () {
+			if (isCountdown) {
+				countdownTimer += Time.deltaTime;
+
+				if (countdownTimer >= countdownTime) {
+					isCountdown = false;
+					countdownText.text = "";
+					Record();
+				} else {
+					countdownText.text = Mathf.CeilToInt(countdownTime-countdownTimer).ToString();
+				}
+
+			} else if (clipRecording.IsRecording() && !recorded) {
+				playTimer += Time.deltaTime;
+
+				waveform.DrawWaveform();
+
+				if (playTimer >= recordTime) {
+					CompleteRecording();
+				}
+
+			} else if (clipRecording.IsPlaying()) {
+				if (clipRecording.GetPlayDir() > 0) {
+					if (playTimer < recordTime)
+						playTimer += Time.deltaTime;
+
+					if (playTimer >= recordTime) {
+						clipRecording.StopClip(audio);
+					}
+				} else if (clipRecording.GetPlayDir() < 0) {
+					if (playTimer > 0)
+						playTimer -= Time.deltaTime;
+
+					if (playTimer <= 0) {
+						clipRecording.StopClip(audio);
+					}
+				}
+
+			}
+			waveform.SetPlayhead(playTimer/recordTime);
+
+		}
+
+		private void CompleteRecording () {
+			clipRecording.StopRecording();
+			recorded = true;
+		}
 	}
 }
