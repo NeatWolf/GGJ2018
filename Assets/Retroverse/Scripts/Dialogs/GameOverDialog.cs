@@ -64,6 +64,7 @@ namespace GGJ2018 {
 
 		public void Replay()
 		{
+			Hide();
 			round.roundNum = 1;
 			transistion.Show( nextDialog );
 		}
