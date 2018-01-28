@@ -39,12 +39,8 @@ namespace GGJ2018 {
 			string answer = questions.CurrentQuestion().answer;
 			int maxDistance = answer.Length;
 			
-
-			players.FirstPlayer();
-
 			int numPlayers = players.NumPlayers();
 
-			Debug.Log(numPlayers);
 			int j=0;
 			Player speakingPlayer = players.CurrentPlayer();
 			ScorePanel speakingScorePanel = null;
@@ -103,6 +99,7 @@ namespace GGJ2018 {
 				nextDialog = gameOverDialog;
 			} else {
 				round.roundNum += 1;
+				players.NextPlayer();
 				nextDialog = roundBeginDialog;
 			}
 			transition.Show(nextDialog);
