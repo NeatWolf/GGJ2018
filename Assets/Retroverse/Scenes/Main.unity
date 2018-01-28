@@ -412,7 +412,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e97924db63d8c2c4197bcc00539dc28c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transition: {fileID: 11400000, guid: d41e462ca55557248812db3a3b9cb76a, type: 2}
+  transition: {fileID: 11400000, guid: d385701beb8fab44c8f96f0ab7fb56a3, type: 2}
   nextDialog: {fileID: 1482983150}
   videoPlayer: {fileID: 1866826774}
   questions: {fileID: 11400000, guid: 3db0795e67af4944584d99c58b8286e2, type: 2}
@@ -5999,7 +5999,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextDialog: {fileID: 62560120}
-  transistion: {fileID: 11400000, guid: 6b9267ddc2ac9c6458fdb1ed37e39ed1, type: 2}
+  transistion: {fileID: 11400000, guid: d385701beb8fab44c8f96f0ab7fb56a3, type: 2}
   nextGuessTransition: {fileID: 11400000, guid: d385701beb8fab44c8f96f0ab7fb56a3,
     type: 2}
   round: {fileID: 11400000, guid: 92d00f12a3110e34fb56908eb4eccff6, type: 2}
@@ -6440,7 +6440,7 @@ MonoBehaviour:
   players: {fileID: 11400000, guid: 3e4a9326e5cad5742ac57ce0eceebbc8, type: 2}
   round: {fileID: 11400000, guid: 92d00f12a3110e34fb56908eb4eccff6, type: 2}
   nextDialog: {fileID: 783015442}
-  transistion: {fileID: 11400000, guid: d41e462ca55557248812db3a3b9cb76a, type: 2}
+  transistion: {fileID: 11400000, guid: d385701beb8fab44c8f96f0ab7fb56a3, type: 2}
 --- !u!114 &956950248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7133,6 +7133,7 @@ MonoBehaviour:
   playerName: {fileID: 710622150}
   scoreThisRound: {fileID: 1236000700}
   totalScore: {fileID: 1748228708}
+  background: {fileID: 0}
 --- !u!114 &1022474930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8322,6 +8323,8 @@ MonoBehaviour:
   quitButton: {fileID: 1022456350}
   players: {fileID: 11400000, guid: 3e4a9326e5cad5742ac57ce0eceebbc8, type: 2}
   round: {fileID: 11400000, guid: 92d00f12a3110e34fb56908eb4eccff6, type: 2}
+  transistion: {fileID: 11400000, guid: 6b9267ddc2ac9c6458fdb1ed37e39ed1, type: 2}
+  nextDialog: {fileID: 1403753798}
 --- !u!114 &1220875074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12939,7 +12942,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   button: {fileID: 776531542}
   nextDialog: {fileID: 284312274}
-  transistion: {fileID: 11400000, guid: 6b9267ddc2ac9c6458fdb1ed37e39ed1, type: 2}
+  transistion: {fileID: 11400000, guid: d385701beb8fab44c8f96f0ab7fb56a3, type: 2}
 --- !u!114 &1997572637
 MonoBehaviour:
   m_ObjectHideFlags: 0

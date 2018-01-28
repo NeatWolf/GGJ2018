@@ -77,11 +77,13 @@ namespace GGJ2018 {
 				
 			}
 
-			speakingPlayer.score += pointsForSpeaker;
+			if (speakingScorePanel != null) {
+				speakingPlayer.score += pointsForSpeaker;
 
-			speakingScorePanel.background.color = settings.speakerPanelColor;
-			speakingScorePanel.scoreThisRound.text = pointsForSpeaker.ToString();
-			speakingScorePanel.totalScore.text = speakingPlayer.score.ToString();
+				speakingScorePanel.background.color = settings.speakerPanelColor;
+				speakingScorePanel.scoreThisRound.text = pointsForSpeaker.ToString();
+				speakingScorePanel.totalScore.text = speakingPlayer.score.ToString();
+			}
 
 		}
 
