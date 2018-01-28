@@ -17,18 +17,46 @@ public class SimpleVideoDialog : Dialog {
     [SerializeField]
 	AudioSource audioSource;
 
+	[SerializeField]
+	DialogTransistion transistion;
+
+	[SerializeField]
+	Dialog nextDialog;
+
+	[SerializeField]
+	bool transistionImmediately;
+
     override public void Show(){
+		base.Show();
+		StartCoroutine( Play() );
+	}
+
+	public IEnumerator Play(){
 		videoPlayer.loopPointReached -= OnComplete;
 		base.Show();
 		videoPlayer.clip = clip;
-		videoPlayer.SetTargetAudioSource( 0, audioSource );
-		videoPlayer.Play();
 		videoPlayer.loopPointReached += OnComplete;
+		videoPlayer.SetTargetAudioSource( 0, audioSource );
+		videoPlayer.Prepare();
+		yield return new WaitUntil( ()=>videoPlayer.isPrepared );
+		videoPlayer.Play();
+		if( transistionImmediately ){
+			transistion.Show( nextDialog );
+
+		}  
+	}
+
+	public override void Hide(){
+		base.Hide();
+		videoPlayer.Stop();
 	}
 
     private void OnComplete(VideoPlayer source)
     {
         Hide();
+		if( !transistionImmediately ){
+			transistion.Show( nextDialog );
+		}  
 
     }
 }
