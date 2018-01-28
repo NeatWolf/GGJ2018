@@ -8,17 +8,18 @@ public class Players : ScriptableObject
     List<Player> players;
     int playerIndex = 0;
     public void Setup(int numPlayers) {
-        players = new List<Player>(numPlayers);
-        for (int i = 0; i < players.Count; i++) {
-            players[i] = new Player() {
-                name = string.Format("Player {0}", i)
-            };
+        players = new List<Player>();
+        for (int i = 0; i < numPlayers; i++) {
+            players.Add(new Player() {
+                name = string.Format("Player {0}", i+1)
+            });
         }
 
         
     }
 
     public Player CurrentPlayer(){
+        Debug.Log(playerIndex);
         return players[playerIndex];
     }
 
