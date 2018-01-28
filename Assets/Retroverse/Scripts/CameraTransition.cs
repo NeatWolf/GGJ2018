@@ -77,7 +77,6 @@ namespace GGJ2018 {
 			}
 
 			
-			Debug.Log("Showing dialog");
 			dialog.Show();
 
 			transition.ShowComplete();

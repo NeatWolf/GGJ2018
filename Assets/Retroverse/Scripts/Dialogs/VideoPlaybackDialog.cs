@@ -32,6 +32,12 @@ public class VideoPlaybackDialog : Dialog {
 	[SerializeField]
 	Settings settings;
 
+	[SerializeField]
+	bool playQuestionForwards = false;
+
+	[SerializeField]
+	bool restrictReplays;
+
 	int triesRemaining;
 
 	void Init () 
@@ -55,14 +61,16 @@ public class VideoPlaybackDialog : Dialog {
 
 	override public void Show()
 	{
-		triesRemaining = settings.numberOfTries;
+		if(restrictReplays){
+			triesRemaining = settings.numberOfTries;
+		}
 		base.Show();
 		Play();
 	}
 
 	void Play(){
 		videoPlayer.loopPointReached -= OnComplete;
-		videoPlayer.clip = questions.CurrentQuestion().videoClipReverse;
+		videoPlayer.clip = playQuestionForwards ?  questions.CurrentQuestion().videoClipForward : questions.CurrentQuestion().videoClipReverse;
 		videoPlayer.loopPointReached += OnComplete;
 
 		videoPlayer.SetTargetAudioSource( 0, videoPlayer.gameObject.GetComponent<AudioSource>() );
@@ -75,13 +83,15 @@ public class VideoPlaybackDialog : Dialog {
 	
     private void OnComplete(VideoPlayer source)
     {				
-		repeatButton.gameObject.SetActive( triesRemaining > 0 );
+		repeatButton.gameObject.SetActive( !restrictReplays || triesRemaining > 0 );
 		continueButton.gameObject.SetActive(true);
     }
 
 
 	private void UpdateText(){
-		triesTextField.text = string.Format(settings.triesRemainingText, triesRemaining);
+		if(restrictReplays){
+			triesTextField.text = string.Format(settings.triesRemainingText, triesRemaining);
+		}
 	}
 
 	void RepeatVideo(){

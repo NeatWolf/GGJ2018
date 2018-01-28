@@ -14,6 +14,10 @@ namespace GGJ2018 {
 		DialogTransistion transistion;
 
 		[SerializeField]
+		DialogTransistion nextGuessTransition;
+
+
+		[SerializeField]
 		Round round;
 
 		[SerializeField]
@@ -91,7 +95,7 @@ namespace GGJ2018 {
 					NextDialog();
 					return;
 				}
-				transistion.Show( this );
+				nextGuessTransition.Show( this );
 			}
 			else {
 				transistion.Show(nextDialog);

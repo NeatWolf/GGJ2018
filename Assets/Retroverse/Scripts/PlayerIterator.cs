@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu]
-public class PlayerIterator : ScriptableObject {
+public class PlayerIterator : ScriptableObject, ISerializationCallbackReceiver {
 
 	public Players players;
 
@@ -24,4 +24,13 @@ public class PlayerIterator : ScriptableObject {
 		return players.GetPlayerAt(playerIndex);
 	}
 
+    public void OnBeforeSerialize()
+    {
+        
+    }
+
+    public void OnAfterDeserialize()
+    {
+        playerIndex = 0;
+    }
 }

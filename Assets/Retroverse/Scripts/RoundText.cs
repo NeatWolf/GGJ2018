@@ -11,6 +11,15 @@ public class RoundText : MonoBehaviour {
 	[SerializeField]
 	Questions questions;
 
+	[SerializeField]
+	Players players;
+
+	[SerializeField]
+	Text playerNameField;
+
+	[SerializeField]
+	Image characterImage;
+
 	string formatStr;
 	// Use this for initialization
 	void Awake () {
@@ -20,5 +29,7 @@ public class RoundText : MonoBehaviour {
 	// Update is called once per frame
 	void OnEnable(){
 		roundText.text = string.Format( formatStr, questions.currentRound );
+		characterImage.sprite = players.CurrentPlayer().character.charSprite;
+		playerNameField.text = players.CurrentPlayer().name;
 	}
 }

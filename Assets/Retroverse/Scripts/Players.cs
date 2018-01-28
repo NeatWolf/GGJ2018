@@ -28,7 +28,6 @@ public class Players : ScriptableObject
     }
 
     public Player CurrentPlayer(){
-        Debug.Log(playerIndex);
         return players[playerIndex];
     }
 

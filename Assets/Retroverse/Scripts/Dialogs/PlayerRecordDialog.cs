@@ -16,6 +16,15 @@ namespace GGJ2018 {
 		private Text countdownText, repeatPhraseText;
 
 		[SerializeField]
+		private Text nameField;
+
+		[SerializeField]
+		private Image characterImage;
+
+		[SerializeField]
+		Players players;
+
+		[SerializeField]
 		private Round round;
 
 		[SerializeField]
@@ -75,9 +84,18 @@ namespace GGJ2018 {
 		}
 
 		// Use this for initialization
-		void Start () {
+		override public void Show () {
+			round.guesses.Clear();
+			characterImage.sprite = players.CurrentPlayer().character.charSprite;
+			nameField.text = players.CurrentPlayer().name;
+			base.Show();
 			Restart();
-			StartCountdown();
+			StartCountdown();			
+		}
+
+		override public void Hide(){
+			base.Hide();
+			waveform.gameObject.SetActive(false);
 		}
 		
 		// Update is called once per frame
