@@ -22,7 +22,15 @@ namespace GGJ2018 {
 		[SerializeField]
 		private Players players;
 
+		[SerializeField]
+		private Round round;
+
 		private Player winner;
+
+		public void Awake(){
+			replayButton.onClick.AddListener( Replay );
+			quitButton.onClick.AddListener( Application.Quit );
+		}
 
 		public override void Show() {
 			base.Show();
@@ -48,16 +56,11 @@ namespace GGJ2018 {
 		}
 
 
-		
-		// Use this for initialization
-		void Start () {
-			
+		public void Replay()
+		{
+			round.roundNum = 1;
 		}
-
-		// Update is called once per frame
-		void Update () {
-			
-		}
+	
 	}
 
 }
