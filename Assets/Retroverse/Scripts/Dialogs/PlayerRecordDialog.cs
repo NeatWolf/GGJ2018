@@ -13,10 +13,13 @@ namespace GGJ2018 {
 		private Waveform waveform;
 
 		[SerializeField]
-		private Text countdownText;
+		private Text countdownText, repeatPhraseText;
+
+		[SerializeField]
+		private Round round;
 
 		private float recordTime = 3f, countdownTime = 3f;
-
+		
 		ClipRecording clipRecording;
 
 		private float playTimer, countdownTimer;
@@ -53,6 +56,8 @@ namespace GGJ2018 {
 			waveform.gameObject.SetActive(true);
 			waveform.ClearWaveform();
 			//waveform.gameObject.SetActive(false);
+
+			repeatPhraseText.gameObject.SetActive(true);
 
 			playTimer = 0;
 
@@ -115,6 +120,9 @@ namespace GGJ2018 {
 		private void CompleteRecording () {
 			clipRecording.StopRecording();
 			recorded = true;
+
+			round.playerRecording = clipRecording;
+			repeatPhraseText.gameObject.SetActive(false);
 
 			playTimer = recordTime;
 			PlayBackwards();
