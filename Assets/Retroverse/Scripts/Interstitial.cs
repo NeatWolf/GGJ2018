@@ -21,7 +21,6 @@ namespace GGJ2018 {
 
 		private void OnShowBegin(Dialog dialog)
 		{
-			Debug.Log("Meep!");
 			StartCoroutine( ShowDialog(dialog) );
 		}
 

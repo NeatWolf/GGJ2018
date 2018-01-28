@@ -5,8 +5,8 @@ using UnityEngine;
 [CreateAssetMenu]
 public class Round : ScriptableObject {
 
-	public string[] guesses;
-	public AudioClip playerRecording;
+	public List<string> guesses;
+	public ClipRecording playerRecording;
 
 
 }
