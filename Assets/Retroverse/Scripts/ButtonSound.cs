@@ -5,20 +5,18 @@ using UnityEngine.UI;
 
 public class ButtonSound : MonoBehaviour {
 
-	[SerializeField]
 	private Button button;
 
 	[SerializeField]
 	private AudioClip sound;
 
-	private AudioSource source;
 
 	private void PlaySound () {
-		source.PlayOneShot(sound);
+		AudioSource.PlayClipAtPoint(sound, transform.position);
 	}
 
 	void Awake() {
-		source = gameObject.AddComponent<AudioSource>();
+		button = GetComponent<Button>();
 	}
 
 	// Use this for initialization
