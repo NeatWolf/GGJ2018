@@ -6,4 +6,5 @@ public class Player
 {
     public string name;
     public long score;
+    public CharacterInfo character;
 }
