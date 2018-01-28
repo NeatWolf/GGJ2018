@@ -14,6 +14,21 @@ namespace GGJ2018 {
 		[SerializeField]
 		private Text charName;
 
+		[SerializeField]
+		private Text playerNameTitle;
+
+		[SerializeField]
+		private InputField playerNameInput;
+
+		[SerializeField]
+		private Players players;
+
+		[SerializeField]
+		private DialogTransistion transition;
+
+		[SerializeField]
+		private Dialog nextDialog;
+
 		private int charIndex = 0;
 
 		public void ResetChar () {
@@ -47,7 +62,21 @@ namespace GGJ2018 {
 		}
 
 		public void NextPlayer () {
+			players.CurrentPlayer().name = playerNameInput.text;
+			players.CurrentPlayer().character = characters[charIndex];
+
+			bool noMorePlayers = players.NextPlayer();
+
+			playerNameTitle.text = players.CurrentPlayer().name;
+
+			playerNameInput.text = "";
+
 			ResetChar();
+
+			if (noMorePlayers) {
+				Hide();
+				transition.Show( nextDialog );
+			}
 		}
 
 		// Use this for initialization
