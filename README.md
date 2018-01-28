@@ -1,4 +1,4 @@
-# GGJ2018
+# GGJ2018 Tele_Verse
 Entry for the Global Game Jam 2018
 
 ##### Commandments
