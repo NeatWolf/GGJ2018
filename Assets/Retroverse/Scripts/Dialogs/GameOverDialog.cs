@@ -27,6 +27,12 @@ namespace GGJ2018 {
 
 		private Player winner;
 
+		[SerializeField]
+		DialogTransistion transistion;
+
+		[SerializeField]
+		Dialog nextDialog;
+
 		public void Awake(){
 			replayButton.onClick.AddListener( Replay );
 			quitButton.onClick.AddListener( Application.Quit );
@@ -58,7 +64,9 @@ namespace GGJ2018 {
 
 		public void Replay()
 		{
+			Hide();
 			round.roundNum = 1;
+			transistion.Show( nextDialog );
 		}
 	
 	}

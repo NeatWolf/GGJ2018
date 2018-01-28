@@ -14,6 +14,3 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Retroverse/Scenes/VoiceRecordTest.unity
     guid: 98f9e8dd8d5db9c48afef980e018199c
-  - enabled: 0
-    path: Assets/Retroverse/Scenes/Main-Evan.unity
-    guid: f6f25e0ee6cbe534ba4606e996b15431
