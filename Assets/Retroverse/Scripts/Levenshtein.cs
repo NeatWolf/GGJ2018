@@ -4,7 +4,7 @@ using UnityEngine;
 using System.Text.RegularExpressions;
 using UnityEngine.Profiling;
 
-public class Levenshtein : MonoBehaviour {
+public class Levenshtein {
 
     public static int Distance (string _a, string _b) {
         Profiler.BeginSample("Distance");
@@ -42,14 +42,4 @@ public class Levenshtein : MonoBehaviour {
         return norm.Trim();
         Profiler.EndSample();
     }
-
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }

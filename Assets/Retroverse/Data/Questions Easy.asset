@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edea9233c359bb14491e9e9fcf4e47a1, type: 3}
+  m_Name: Questions Easy
+  m_EditorClassIdentifier: 
+  questions:
+  - {fileID: 11400000, guid: 086e8d7a0a5864b4c95483ba5332a5a3, type: 2}
+  - {fileID: 11400000, guid: 7971e14cdf1364bacb6f5d020d87de85, type: 2}
+  - {fileID: 11400000, guid: 99cd1dcfca21f497c8c6a3477d5cbb9c, type: 2}
+  - {fileID: 11400000, guid: ffd576c4bec6ad94ba0bbf9f1af7325e, type: 2}
+  - {fileID: 11400000, guid: 7da0480b309b7441a9b9c15130358618, type: 2}
+  - {fileID: 11400000, guid: d765e22790225495d885c75a814e3add, type: 2}
+  - {fileID: 11400000, guid: 28c53076e3a574c828881aa937da433c, type: 2}
+  - {fileID: 11400000, guid: 333a30e2a27154e6b9bc8cedc761f6ee, type: 2}
+  - {fileID: 11400000, guid: 5c2d890a2f16442c58fdd75170e33609, type: 2}

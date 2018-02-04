@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using GGJ2018;
 using UnityEngine;
 using UnityEngine.Video;
-
+using UnityEngine.Audio;
 public class SimpleVideoDialog : Dialog {
 
 
@@ -26,9 +26,16 @@ public class SimpleVideoDialog : Dialog {
 	[SerializeField]
 	bool transistionImmediately;
 
+
     override public void Show(){
+		
 		base.Show();
-		StartCoroutine( Play() );
+		StartCoroutine( Play() );		
+	}
+
+	public override void Hide(){
+		base.Hide();
+		videoPlayer.Stop();
 	}
 
 	public IEnumerator Play(){
@@ -46,10 +53,7 @@ public class SimpleVideoDialog : Dialog {
 		}  
 	}
 
-	public override void Hide(){
-		base.Hide();
-		videoPlayer.Stop();
-	}
+
 
     private void OnComplete(VideoPlayer source)
     {

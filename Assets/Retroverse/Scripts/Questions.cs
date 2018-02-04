@@ -6,8 +6,8 @@ using UnityEngine;
 public class Questions : ScriptableObject, ISerializationCallbackReceiver
 {
     public List<Question> questions;
-    [System.NonSerialized]
 
+    [System.NonSerialized]
     int questionIndex = 0;
 
     public Question CurrentQuestion(){
