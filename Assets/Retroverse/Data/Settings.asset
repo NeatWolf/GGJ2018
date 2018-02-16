@@ -28,7 +28,7 @@ MonoBehaviour:
     rgba: 4278255615
   - serializedVersion: 2
     rgba: 4294967295
-  numberOfRounds: 5
+  numberOfRoundsForPlayerCount: 00000000040000000400000006000000040000000500000006000000
   numberOfTries: 2
   triesRemainingText: REPLAYS:{0}
   speakerPointBonus: 20

@@ -584,7 +584,7 @@ MonoBehaviour:
   transition: {fileID: 11400000, guid: d385701beb8fab44c8f96f0ab7fb56a3, type: 2}
   nextDialog: {fileID: 1482983150}
   videoPlayer: {fileID: 1866826774}
-  questions: {fileID: 11400000, guid: 3db0795e67af4944584d99c58b8286e2, type: 2}
+  gameState: {fileID: 11400000, guid: 62af6a343800f4a76ba3da0d479a7f9e, type: 2}
   repeatButton: {fileID: 1756653202}
   continueButton: {fileID: 1113919484}
   triesTextField: {fileID: 0}
@@ -2135,7 +2135,7 @@ MonoBehaviour:
   transition: {fileID: 11400000, guid: d385701beb8fab44c8f96f0ab7fb56a3, type: 2}
   nextDialog: {fileID: 956950247}
   videoPlayer: {fileID: 1866826774}
-  questions: {fileID: 11400000, guid: 3db0795e67af4944584d99c58b8286e2, type: 2}
+  gameState: {fileID: 11400000, guid: 62af6a343800f4a76ba3da0d479a7f9e, type: 2}
   repeatButton: {fileID: 1538495430}
   continueButton: {fileID: 279229140}
   triesTextField: {fileID: 1389440411}
@@ -3895,7 +3895,7 @@ GameObject:
   - component: {fileID: 489647895}
   - component: {fileID: 489647894}
   m_Layer: 5
-  m_Name: Player 2
+  m_Name: Medium
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3973,13 +3973,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: SetNumPlayers
+      - m_Target: {fileID: 505895444}
+        m_MethodName: SelectDifficulty
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -4356,6 +4356,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSnapshot: {fileID: 245376008613749184, guid: f628dd5416c16475badca50a864cf034,
     type: 2}
+  transition: {fileID: 11400000, guid: d385701beb8fab44c8f96f0ab7fb56a3, type: 2}
+  nextDialog: {fileID: 651716170}
+  questionsByDifficulty:
+  - {fileID: 11400000, guid: 22d098a5ef25645f883af2bb67828ccb, type: 2}
+  - {fileID: 11400000, guid: e7f3dc89914fc401584e50ba21a93628, type: 2}
+  - {fileID: 11400000, guid: 6ccfcc93b82944270a6ac0395ab6ae38, type: 2}
+  gameState: {fileID: 11400000, guid: 62af6a343800f4a76ba3da0d479a7f9e, type: 2}
 --- !u!114 &505895445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9781,7 +9788,7 @@ GameObject:
   - component: {fileID: 1105962786}
   - component: {fileID: 1105962785}
   m_Layer: 5
-  m_Name: Player 1
+  m_Name: Easy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9859,13 +9866,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: SetNumPlayers
+      - m_Target: {fileID: 505895444}
+        m_MethodName: SelectDifficulty
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -10953,7 +10960,7 @@ MonoBehaviour:
   quitButton: {fileID: 1022456350}
   players: {fileID: 11400000, guid: 3e4a9326e5cad5742ac57ce0eceebbc8, type: 2}
   round: {fileID: 11400000, guid: 92d00f12a3110e34fb56908eb4eccff6, type: 2}
-  transistion: {fileID: 11400000, guid: 6b9267ddc2ac9c6458fdb1ed37e39ed1, type: 2}
+  transistion: {fileID: 11400000, guid: d385701beb8fab44c8f96f0ab7fb56a3, type: 2}
   nextDialog: {fileID: 1403753798}
 --- !u!114 &1220875074
 MonoBehaviour:
@@ -11400,7 +11407,7 @@ GameObject:
   - component: {fileID: 1264122697}
   - component: {fileID: 1264122696}
   m_Layer: 5
-  m_Name: Player 3
+  m_Name: Hard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11478,13 +11485,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: SetNumPlayers
+      - m_Target: {fileID: 505895444}
+        m_MethodName: SelectDifficulty
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -13764,7 +13771,7 @@ MonoBehaviour:
     type: 2}
   scorePanel: {fileID: 114647359250458608, guid: 5167fc66190b5bb47a45677dc8c1a52c,
     type: 2}
-  questions: {fileID: 11400000, guid: 3db0795e67af4944584d99c58b8286e2, type: 2}
+  gameState: {fileID: 11400000, guid: 62af6a343800f4a76ba3da0d479a7f9e, type: 2}
   players: {fileID: 11400000, guid: 3e4a9326e5cad5742ac57ce0eceebbc8, type: 2}
   round: {fileID: 11400000, guid: 92d00f12a3110e34fb56908eb4eccff6, type: 2}
   settings: {fileID: 11400000, guid: a16184007d626054fa3ce15e2d75039d, type: 2}
@@ -15078,7 +15085,7 @@ MonoBehaviour:
     type: 2}
   players: {fileID: 11400000, guid: 3e4a9326e5cad5742ac57ce0eceebbc8, type: 2}
   transition: {fileID: 11400000, guid: d385701beb8fab44c8f96f0ab7fb56a3, type: 2}
-  nextDialog: {fileID: 651716170}
+  nextDialog: {fileID: 505895444}
 --- !u!1 &1699724512
 GameObject:
   m_ObjectHideFlags: 0
@@ -17002,7 +17009,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roundText: {fileID: 751909423}
   round: {fileID: 11400000, guid: 92d00f12a3110e34fb56908eb4eccff6, type: 2}
-  questions: {fileID: 11400000, guid: 3db0795e67af4944584d99c58b8286e2, type: 2}
+  gameState: {fileID: 0}
   players: {fileID: 11400000, guid: 3e4a9326e5cad5742ac57ce0eceebbc8, type: 2}
   playerNameField: {fileID: 1946138043}
   characterImage: {fileID: 394558624}
