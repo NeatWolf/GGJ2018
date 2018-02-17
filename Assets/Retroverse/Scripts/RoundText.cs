@@ -12,7 +12,7 @@ public class RoundText : MonoBehaviour {
 	Round round;
 
 	[SerializeField]
-	Questions questions;
+	GameState gameState;
 
 	[SerializeField]
 	Players players;
