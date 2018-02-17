@@ -24,7 +24,7 @@ namespace GGJ2018 {
 		}
 
 		private void AddButtonListener(DialogButton dButton){
-			Debug.LogFormat("{0} Attaching listener to {1} ",this.name,dButton.button.name);
+			//Debug.LogFormat("{0} Attaching listener to {1} ",this.name,dButton.button.name);
 			dButton.button.onClick.AddListener( ()=>{
 				Show(dButton.dialog);
 			});

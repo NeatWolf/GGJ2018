@@ -22,7 +22,10 @@ namespace GGJ2018 {
 
 
 		[SerializeField]
-		private Dialog roundBeginDialog, gameOverDialog;
+		private Dialog roundBeginDialog;
+		
+		[SerializeField]
+		private Dialog gameOverDialog;
 
 		[SerializeField]
 		private DialogTransistion transition;

@@ -9,8 +9,9 @@ public class Levenshtein {
     public static int Distance (string _a, string _b) {
         Profiler.BeginSample("Distance");
         string a = NormString(_a), b = NormString(_b);
-        return Distance(ref a, ref b, a.Length, b.Length);
+        int distance = Distance(ref a, ref b, a.Length, b.Length);
         Profiler.EndSample();
+        return distance;
     }
 
     private static int Distance (ref string a, ref string b, int lenA, int lenB)
@@ -38,8 +39,8 @@ public class Levenshtein {
 
         string norm = rgx_NonAlphanum.Replace(a, "");
         norm = rgx_MultiSpace.Replace(norm, " ");
-
-        return norm.Trim();
+        var output = norm.Trim();
         Profiler.EndSample();
+        return  output;
     }
 }

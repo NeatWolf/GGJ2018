@@ -7,7 +7,7 @@ namespace GGJ2018 {
 	public class PlayerRecordDialog : Dialog {
 	
 		[SerializeField]
-		private AudioSource audio;
+		private new AudioSource audio;
 
 		[SerializeField]
 		private Waveform waveform;

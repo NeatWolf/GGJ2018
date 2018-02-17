@@ -23,9 +23,6 @@ namespace GGJ2018 {
 			transition.Show( dialogs[0] );
 		}
 		
-		// Update is called once per frame
-		void Update () {
-			
-		}
+
 	}
 }
