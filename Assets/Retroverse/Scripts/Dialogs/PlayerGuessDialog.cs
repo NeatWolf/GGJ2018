@@ -63,6 +63,7 @@ namespace GGJ2018 {
 			playerNameField.text = iterator.CurrentPlayer().name;
 			characterImage.sprite = iterator.CurrentPlayer().character.charSprite;
 			phraseInput.text = "";
+			phraseInput.ActivateInputField();
 		}
 
 		override public void Hide()

@@ -39,6 +39,7 @@ namespace GGJ2018 {
 			ResetChar();
 			playerNameTitle.text = playerIterator.CurrentPlayer().name;
 			playerNameInput.text = "";
+			playerNameInput.ActivateInputField();
 
 		}
 		public void ResetChar () {
@@ -69,6 +70,7 @@ namespace GGJ2018 {
 		private void UpdateChar () {
 			charImg.sprite = characters[charIndex].charSprite;
 			charName.text = characters[charIndex].charName;
+			
 		}
 
 		public void NextPlayer () {

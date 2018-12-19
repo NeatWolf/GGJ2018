@@ -26,6 +26,8 @@ public class SimpleVideoDialog : Dialog {
 	[SerializeField]
 	bool transistionImmediately;
 
+	[SerializeField]
+	Camera screenCamera;
 
     override public void Show(){
 		
@@ -36,6 +38,7 @@ public class SimpleVideoDialog : Dialog {
 	public override void Hide(){
 		base.Hide();
 		videoPlayer.Stop();
+		screenCamera.Render();
 	}
 
 	public IEnumerator Play(){

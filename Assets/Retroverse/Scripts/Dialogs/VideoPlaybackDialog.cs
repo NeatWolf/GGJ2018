@@ -63,6 +63,7 @@ public class VideoPlaybackDialog : Dialog {
 	}
 
 	IEnumerator Play(){
+		videoPlayer.enabled = true;
 		repeatButton.gameObject.SetActive(false);
 		continueButton.gameObject.SetActive(false);
 		videoPlayer.loopPointReached -= OnComplete;
@@ -86,6 +87,7 @@ public class VideoPlaybackDialog : Dialog {
     {				
 		repeatButton.gameObject.SetActive( !restrictReplays || triesRemaining > 0 );
 		continueButton.gameObject.SetActive(true);
+		videoPlayer.enabled = false;
     }
 
 

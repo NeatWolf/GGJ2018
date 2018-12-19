@@ -2259,7 +2259,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400096, guid: f93e231aece904bf9ac79a66e1be6ef3, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 100096, guid: f93e231aece904bf9ac79a66e1be6ef3, type: 3}
       propertyPath: m_Name
@@ -2317,7 +2317,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400028, guid: eb088ffbe76c74fa999a9b427b2011f2, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 400028, guid: eb088ffbe76c74fa999a9b427b2011f2, type: 3}
       propertyPath: m_LocalScale.x
@@ -6500,6 +6500,7 @@ MonoBehaviour:
   transistion: {fileID: 11400000, guid: 9537d9df53a8db0478972b053eea2ff0, type: 2}
   nextDialog: {fileID: 1403753798}
   transistionImmediately: 1
+  screenCamera: {fileID: 873054583}
 --- !u!1 &694280785
 GameObject:
   m_ObjectHideFlags: 0
@@ -8322,7 +8323,7 @@ GameObject:
   - component: {fileID: 873054582}
   - component: {fileID: 873054581}
   m_Layer: 8
-  m_Name: Camera
+  m_Name: ScreenCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8348,7 +8349,7 @@ Camera:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 873054580}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 2
   m_BackGroundColor: {r: 0.051470578, g: 0.051470578, b: 0.051470578, a: 1}
@@ -8387,8 +8388,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1866826773}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9541,7 +9541,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e5e4d9ec096c04a579c9b0c5e0b9aff4, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: e5e4d9ec096c04a579c9b0c5e0b9aff4, type: 3}
       propertyPath: m_Materials.Array.data[1]
@@ -9772,7 +9772,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1105962783
 GameObject:
@@ -12564,7 +12564,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400096, guid: f93e231aece904bf9ac79a66e1be6ef3, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100096, guid: f93e231aece904bf9ac79a66e1be6ef3, type: 3}
       propertyPath: m_Name
@@ -13078,7 +13078,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1403753795
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13633,7 +13633,7 @@ Transform:
   - {fileID: 772764563}
   - {fileID: 2043890604}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 168.2, z: 0}
 --- !u!1 &1482356235
 GameObject:
@@ -14652,7 +14652,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -16158,7 +16158,7 @@ GameObject:
   - component: {fileID: 1866826773}
   - component: {fileID: 1866826774}
   - component: {fileID: 1866826775}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: VideoPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16171,12 +16171,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1866826772}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 873054584}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!328 &1866826774
 VideoPlayer:
@@ -16189,11 +16189,11 @@ VideoPlayer:
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 873054583}
-  m_TargetTexture: {fileID: 0}
+  m_TargetTexture: {fileID: 8600000, guid: a7ae2cd2d074b0e41a1cdc62e6246223, type: 2}
   m_TimeReference: 0
   m_TargetMaterialRenderer: {fileID: 0}
   m_TargetMaterialProperty: _MainTex
-  m_RenderMode: 1
+  m_RenderMode: 2
   m_AspectRatio: 2
   m_DataSource: 0
   m_PlaybackSpeed: 1
@@ -16853,7 +16853,7 @@ Transform:
   - {fileID: 1203362172}
   - {fileID: 958644835}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: -11.735001, z: 0}
 --- !u!1001 &1995970406
 Prefab:
@@ -16892,7 +16892,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 9c12f1a6a1884411fbc1a382eb7cc754, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 9c12f1a6a1884411fbc1a382eb7cc754, type: 3}
       propertyPath: m_Name
@@ -17144,7 +17144,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 1f7d7138674e64d4ebdcaff4897a6ed3, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 1f7d7138674e64d4ebdcaff4897a6ed3, type: 3}
       propertyPath: m_LocalScale.x
