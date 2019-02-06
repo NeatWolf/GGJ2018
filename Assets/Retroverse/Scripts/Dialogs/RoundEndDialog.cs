@@ -9,7 +9,7 @@ namespace GGJ2018 {
 		private ScorePanel scorePanel;
 
 		[SerializeField]
-		private Questions questions;
+		private GameState gameState;
 
 		[SerializeField]
 		private Players players;
@@ -22,7 +22,10 @@ namespace GGJ2018 {
 
 
 		[SerializeField]
-		private Dialog roundBeginDialog, gameOverDialog;
+		private Dialog roundBeginDialog;
+		
+		[SerializeField]
+		private Dialog gameOverDialog;
 
 		[SerializeField]
 		private DialogTransistion transition;
@@ -36,7 +39,7 @@ namespace GGJ2018 {
 		}
 
 		public void CalculateScores () {
-			string answer = questions.CurrentQuestion().answer;
+			string answer = gameState.currentQuestions.CurrentQuestion().answer;
 			int maxDistance = answer.Length;
 			
 			int numPlayers = players.NumPlayers();
@@ -92,12 +95,12 @@ namespace GGJ2018 {
 
 			Dialog nextDialog;
 
-			questions.NextQuestion();
+			gameState.currentQuestions.NextQuestion();
 
-			if (round.roundNum >= settings.numberOfRounds) {
+			if (round.roundNum >= settings.numberOfRoundsForPlayerCount[players.NumPlayers()]) {
 				nextDialog = gameOverDialog;
 				players.FirstPlayer();
-				round.roundNum = 1;
+				round.Reset();
 			} else {
 				round.roundNum += 1;
 				players.NextPlayer();

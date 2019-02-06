@@ -18,7 +18,7 @@ public class VideoPlaybackDialog : Dialog {
 	VideoPlayer videoPlayer;
 
 	[SerializeField]
-	Questions questions;
+	GameState gameState;
 
 	[SerializeField]
 	Button repeatButton;
@@ -66,7 +66,7 @@ public class VideoPlaybackDialog : Dialog {
 		repeatButton.gameObject.SetActive(false);
 		continueButton.gameObject.SetActive(false);
 		videoPlayer.loopPointReached -= OnComplete;
-		videoPlayer.clip = playQuestionForwards ?  questions.CurrentQuestion().videoClipForward : questions.CurrentQuestion().videoClipReverse;
+		videoPlayer.clip = playQuestionForwards ?  gameState.currentQuestions.CurrentQuestion().videoClipForward : gameState.currentQuestions.CurrentQuestion().videoClipReverse;
 		videoPlayer.loopPointReached += OnComplete;
 		//Debug.Log("prepared!");
 		//videoPlayer.audioOutputMode = VideoAudioOutputMode.AudioSource;

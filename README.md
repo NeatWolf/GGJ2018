@@ -27,8 +27,8 @@ https://creativecommons.org/licenses/by-nc-sa/4.0/
 
 ##### Objects
 
-- TV cabinet: Denis Grub
-- TV: Dennis: Denis Grub
+- TV cabinet: Denis Gruba
+- TV: Dennis: Denis Gruba
 - Standing Lamp: Danny Bittman	https://poly.google.com/view/aZyMp9TEk0I		
 - Lampshade:	Matthew McCabe	https://poly.google.com/view/3SpqJFhW1tn		
 - Toy rocket:	Tom De Wispelaere	https://poly.google.com/view/6QxX3auS0nJ		
